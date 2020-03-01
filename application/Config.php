@@ -18,7 +18,7 @@ define('APP_COMPANY','UNAN-LEON');
 define('SESSION_TIME',30);
 define('DB_HOST','localhost');
 define('DB_USER','root');
-define('DB_PASS','1234');
+define('DB_PASS','');
 define('DB_NAME','sacur');
 define('DB_CHAR','utf8');
 ?>

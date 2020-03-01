@@ -3775,13 +3775,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .input-group-addon,
 .input-group-btn {
-  width: 1%;
+  width: 20%;
   white-space: nowrap;
   vertical-align: middle;
 }
 .input-group-addon {
   padding: 6px 12px;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: normal;
   line-height: 1;
   color: #555;
@@ -3792,7 +3792,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .input-group-addon.input-sm {
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 15px;
   border-radius: 3px;
 }
 .input-group-addon.input-lg {
@@ -5673,9 +5673,9 @@ a.list-group-item-danger.active:focus {
   padding: 9px;
   border-radius: 3px;
 }
-.close {
+.closet {
   float: right;
-  font-size: 21px;
+  font-size: 50px;
   font-weight: bold;
   line-height: 1;
   color: #000;
@@ -5696,7 +5696,7 @@ button.close {
   padding: 0;
   cursor: pointer;
   background: transparent;
-  border: 0;
+  border: 10px;
 }
 .modal-open {
   overflow: hidden;

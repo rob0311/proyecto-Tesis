@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Sistema de Educación Universitaria</title>
+  <title><?php if(isset($this->titulo)) echo $this->titulo; ?></title>
 
   <!-- Favicons -->
   <link href="<?php echo $_layoutParams['ruta_img'];?>favicon.png" rel="icon">
@@ -26,20 +25,12 @@
   <link href="<?php echo $_layoutParams['ruta_css'];?>zabuto_calendar.css" rel="stylesheet">
   <link href="<?php echo $_layoutParams['ruta_css'];?>jquery.gritter.css " rel="stylesheet">
   <link href="<?php echo $_layoutParams['ruta_css'];?>miEstilo.css" rel="stylesheet">
-
-  <script src="<?php echo $_layoutParams['ruta_js'];?>Chart.js"></script>
- 
   
+  <!-- Modernizer Script for old Browsers   -->
+  <script src="<?php echo $_layoutParams['ruta_js'];?>jquery.min.js"></script>
 </head>
-
-   
-
-
-<body>
+<body>                                                                                                                                                                                                                                                                 
   <section id="container">
-    <!-- **********************************************************************************************************************************************************
-        TOP BAR CONTENT & NOTIFICATIONS
-        *********************************************************************************************************************************************************** -->
     <!--header start-->
     <header  class="header black-bg">
   
@@ -47,15 +38,31 @@
         <div class="fa fa-bars tooltips " data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="index.html" class="logo"><b><span>UNAN LEON </span></b></a>
+      <a href="<?php echo BASE_URL.'index';?>" class="logo"><b><span>UNAN LEON </span></b></a>
       <!--logo end-->
-      <div class="nav notify-row" id="top_menu">
+        <!--Notificaciones-->
+        <div class="nav notify-row" id="top_menu">
         <!--  notification start -->
         <ul class="nav top-menu">
           <!-- settings start -->
+           <li class="dropdown">
+          <form class="form-search content-search navbar-form" action=" " method="post">
+          <div class="input-group">
+         <input  placeholder="Buscar" class="form-control form-text" type="text" size="40" name="" />
+            <span class="input-group-btn">
+               <button class="btn btn-default" type="button">
+               <i class="fa fa-search"></i>
+            </span>
+          </div>
+        </form>
+      </li>
+        <!--fin de caja de Busqueda-->
+
+
+
           <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
-              <i class="fa fa-tasks"></i>
+              <i class="fa fa-camera-retro"></i>
               <span class="badge bg-theme">4</span>
               </a>
             <ul class="dropdown-menu extended tasks-bar">
@@ -63,7 +70,6 @@
               <li>
                 <p class="green">You have 4 pending tasks</p>
               </li>
-              
               <li>
                 <a href="index.html#">
                   <div class="task-info">
@@ -135,7 +141,7 @@
               </li>
               <li>
                 <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="<?php echo $_layoutParams['ruta_img'];?>user.png"></span>
+                  <span class="photo"><img alt="avatar" src="img/ui-zac.jpg"></span>
                   <span class="subject">
                   <span class="from">Zac Snider</span>
                   <span class="time">Just now</span>
@@ -147,7 +153,7 @@
               </li>
               <li>
                 <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="<?php echo $_layoutParams['ruta_img'];?>user.png"></span>
+                  <span class="photo"><img alt="avatar" src="img/ui-divya.jpg"></span>
                   <span class="subject">
                   <span class="from">Divya Manian</span>
                   <span class="time">40 mins.</span>
@@ -159,7 +165,7 @@
               </li>
               <li>
                 <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="<?php echo $_layoutParams['ruta_img'];?>user.png"></span>
+                  <span class="photo"><img alt="avatar" src="img/ui-danro.jpg"></span>
                   <span class="subject">
                   <span class="from">Dan Rogers</span>
                   <span class="time">2 hrs.</span>
@@ -171,7 +177,7 @@
               </li>
               <li>
                 <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="<?php echo $_layoutParams['ruta_img'];?>user.png"></span>
+                  <span class="photo"><img alt="avatar" src="img/ui-sherman.jpg"></span>
                   <span class="subject">
                   <span class="from">Dj Sherman</span>
                   <span class="time">4 hrs.</span>
@@ -196,7 +202,7 @@
             <ul class="dropdown-menu extended notification">
               <div class="notify-arrow notify-arrow-yellow"></div>
               <li>
-                <p class="yellow">Tiene 7 nueva Notificaciones</p>
+                <p class="yellow">You have 7 new notifications</p>
               </li>
               <li>
                 <a href="index.html#">
@@ -235,7 +241,107 @@
         </ul>
         <!--  notification end -->
       </div>
-     
+       <!--Fin de las notificaciones-->  
+
+</ul>
+
+</div>
+
+      <div class="top-menu">
+      <ul class="nav pull-right top-menu">
+      
+        <li><a class="logout" href="<?php echo BASE_URL . 'index/cerrar/' ; ?>"> Cerrar seccion</a></li>
+        <li><a  class="logout" href="<?php echo BASE_URL . 'student/perfil/' ; ?>"><i class="fa fa-user fa-1x "></i>  Perfil de usuario</a></li>
+        </ul>
+      </div>
     </header>
     <!--header end-->
-     
+    <aside>
+    
+    <div id="sidebar" class="nav-collapse">
+      <!-- sidebar menu start
+           Menu izquierdo-->
+      <ul class="sidebar-menu" id="nav-accordion">
+        <p class="centered"><a href="<?php echo BASE_URL . 'student/perfil/' ;?>"><img src="<?php echo $_layoutParams['ruta_img'];?>user.png" class="img-circle" width="80"></a></p>
+        <h5 class="centered"><?php echo Session::get("nombre_estudiante"); ?></h5>
+        <div class="user-text-online">
+            <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
+                              </div>
+        <li class="mt">
+          <a class="active" href="<?php echo BASE_URL . 'student/index/'; ?>">
+            <i class="fa fa-home"></i>
+            <span>Inicio</span>
+            </a>
+        </li>
+        
+        <li>
+      <a href="#" data-toggle="modal" data-target="#myModal1">
+         <i class="fa fa-book"></i>
+            <span>Marcar Asistencia </span>
+           </a>
+         </li>
+
+     <li>
+          <a href="#">
+            <i class="fa fa-question"></i>
+            <span>Preguntas </span>
+            </a>
+        </li>
+        <li class="sub-menu">
+          <a href="javascript:;">
+            <i class="fa fa-list-alt"></i>
+            <span>Ver Calificaciones</span>
+            </a>
+         
+        </li>
+        <li class="sub-menu">
+          <a href="javascript:;">
+            <i class="fa fa-tasks"></i>
+            <span>Clases</span>
+            </a>
+          <ul class="sub">
+            <li><a href="form_component.html">Agregar Nueva clase</a></li>
+            <li><a href="advanced_form_components.html">Historial de clases</a></li>
+            <li class="sub-menu">
+          <a href="javascript:;">
+            <i class="fa fa-th"></i>
+            <span>Trabajos de Clases</span>
+            </a>
+          <ul class="sub">
+            <li><a href="basic_table.html">Recibidos</a></li>
+            <li><a href="responsive_table.html">Enviar</a></li>
+          </ul>
+        </li>
+        <li>
+          </ul>
+        </li>
+        
+        <li>
+          <a href="#">
+            <i class="fa fa-envelope"></i>
+            <span>invitacion </span>
+            <span class="label label-theme pull-right mail-info">2</span>
+            </a>
+        </li>
+        
+        <li>
+          <a href="#">
+            <i class="fa fa-map-marker"></i>
+            <span>Configuracion </span>
+            </a>
+        </li>
+      </ul>
+      
+      <!-- sidebar menu end-->
+    </div>
+  
+    
+  </aside>
+ 
+            
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+

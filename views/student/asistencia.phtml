@@ -1,0 +1,42 @@
+
+ <div class="showback">
+              <!-- Modal -->
+              <div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="z-index: 100000">
+                <div class="modal-dialog ">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title" id="myModalLabel">ASISTENCIA</h4>
+                    </div>
+                    <div class="modal-body">
+     
+             <form id="form_asistencia" class="form-asit" action="" method="post" name="formAsis" >
+                <input type="hidden" value="1" name="enviarAsist" />
+                 
+          
+         <div class="col-md-12">
+         <p> Seleccione la Asignatura</p>
+         <select  class="form-control" name="carrera" id="select_carrera">
+         <?php foreach ($this->asig_recib_anio as $asig_recib_anio) { ?>
+          <option value="<?=$asig_recib_anio['nombre']?>">
+             <?=$asig_recib_anio['nombre']?>
+         </option>
+                 
+          <?php } ?>
+                  
+         </select>
+             <br>
+           </div>    
+        
+  </form>
+
+  </div><!--fin de modal body-->
+            <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                      <button type="button" id="btnprueba" class="btn btn-primary">ASISTIR</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>

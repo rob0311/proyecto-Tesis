@@ -20,13 +20,11 @@
 							<li><a href="#!" class="open-link-newTab"><i class="fa fa-google-plus"></i> &nbsp; Google+</a></li>
 						</ul>
 					</div>
-					<div class="text-center">
-                    <p>  &copy; Copyrights <strong>UNAN-LEON</strong>. Derecho Reservados </p>
-					</div>
+					
 				   </div>
 			</div>
 		</div>
-	</footer>
+	
 		
 		<a href="#slider" id="back-top"><i class="fa fa-angle-up fa-5x"></i></a>
 
@@ -34,141 +32,22 @@
 		================================================== -->
 		<!-- Main jQuery -->
        
-		<!-- Single Page Nav -->
-        <script src="<?php echo $_layoutParams2['ruta_js'];?>jquery.singlePageNav.min.js"></script>
+	
+     
 		<!-- Twitter Bootstrap -->
         <script src="<?php echo $_layoutParams2['ruta_js'];?>bootstrap.min.js"></script>
 		<!-- jquery.fancybox.pack -->
-        <script src="<?php echo $_layoutParams2['ruta_js'];?>jquery.fancybox.pack.js"></script>
+        <script src="<?php echo $_layoutParams2['ruta_js'];?>jquery.mCustomScrollbar.concat.min.js"></script>
 		<!-- jquery.mixitup.min -->
-        <script src="<?php echo $_layoutParams2['ruta_js'];?>jquery.mixitup.min.js"></script>
+        <script src="<?php echo $_layoutParams2['ruta_js'];?>jquery-3.1.1.min.js"></script>
 		<!-- jquery.parallax -->
-        <script src="<?php echo $_layoutParams2['ruta_js'];?>jquery.parallax-1.1.3.js"></script>
+        <script src="<?php echo $_layoutParams2['ruta_js'];?>main.js"></script>
 		<!-- jquery.countTo -->
-        <script src="<?php echo $_layoutParams2['ruta_js'];?>jquery-countTo.js"></script>
+        <script src="<?php echo $_layoutParams2['ruta_js'];?>material.min.js"></script>
 		<!-- jquery.appear -->
-        <script src="<?php echo $_layoutParams2['ruta_js'];?>jquery.appear.js"></script>
-		<script src="<?php echo $_layoutParams2['ruta_js'];?>main.js"></script>
-		<script src="<?php echo $_layoutParams2['ruta_js'];?>zabuto_calen"></script>
-		<!-- jquery easing -->
-        <script src="<?php echo $_layoutParams2['ruta_js'];?>jquery.easing.min.js"></script>
-		<!-- jquery easing -->
-        <script src="<?php echo $_layoutParams2['ruta_js'];?>wow.min.js"></script>
-		<script src="<?php echo $_layoutParams2['ruta_js'];?>wow.js"></script>
-		<script>
-			var wow = new WOW ({
-				boxClass:     'wow',      // animated element css class (default is wow)
-				animateClass: 'animated', // animation css class (default is animated)
-				offset:       120,          // distance to the element when triggering the animation (default is 0)
-				mobile:       false,       // trigger animations on mobile devices (default is true)
-				live:         true        // act on asynchronously loaded content (default is true)
-			  }
-			);
-			wow.init();
-		</script> 
-		<!-- Custom Functions -->
-        <script src="<?php echo $_layoutParams2['ruta_js'];?>custom.js"></script>
-		
-		<script type="text/javascript">
-			$(function(){
-				/* ========================================================================= */
-				/*	Contact Form
-				/* ========================================================================= */
-				
-				$('#contact-form').validate({
-					rules: {
-						name: {
-							required: true,
-							minlength: 2
-						},
-						email: {
-							required: true,
-							email: true
-						},
-						message: {
-							required: true
-						}
-					},
-					messages: {
-						name: {
-							required: "come on, you have a name don't you?",
-							minlength: "your name must consist of at least 2 characters"
-						},
-						email: {
-							required: "no email, no message"
-						},
-						message: {
-							required: "um...yea, you have to write something to send this form.",
-							minlength: "thats all? really?"
-						}
-					},
-					submitHandler: function(form) {
-						$(form).ajaxSubmit({
-							type:"POST",
-							data: $(form).serialize(),
-							url:"process.php",
-							success: function() {
-								$('#contact-form :input').attr('disabled', 'disabled');
-								$('#contact-form').fadeTo( "slow", 0.15, function() {
-									$(this).find(':input').attr('disabled', 'disabled');
-									$(this).find('label').css('cursor','default');
-									$('#success').fadeIn();
-								});
-							},
-							error: function() {
-								$('#contact-form').fadeTo( "slow", 0.15, function() {
-									$('#error').fadeIn();
-								});
-							}
-						});
-					}
-				});
-			});
-		</script>
-		<script type="application/javascript">
-    $(document).ready(function() {
-      $("#date-popover").popover({
-        html: true,
-        trigger: "manual"
-      });
-      $("#date-popover").hide();
-      $("#date-popover").click(function(e) {
-        $(this).hide();
-      });
-
-      $("#my-calendar").zabuto_calendar({
-        action: function() {
-          return myDateFunction(this.id, false);
-        },
-        action_nav: function() {
-          return myNavFunction(this.id);
-        },
-        ajax: {
-          url: "show_data.php?action=1",
-          modal: true
-        },
-        legend: [{
-            type: "text",
-            label: "Special event",
-            badge: "00"
-          },
-          {
-            type: "block",
-            label: "Regular event",
-          }
-        ]
-      });
-    });
-
-    function myNavFunction(id) {
-      $("#date-popover").hide();
-      var nav = $("#" + id).data("navigation");
-      var to = $("#" + id).data("to");
-      console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
-    }
-  </script>
-
-  
-
-    </body>
-</html>
+        <script src="<?php echo $_layoutParams2['ruta_js'];?>ripples.min.js"></script>
+		<script src="<?php echo $_layoutParams2['ruta_js'];?>sweetalert2.min.js"></script>
+			<div class="text-center">
+                    <p>  &copy; Copyrights <strong>UNAN-LEON</strong>. Derecho Reservados </p>
+					</div>
+		</footer>

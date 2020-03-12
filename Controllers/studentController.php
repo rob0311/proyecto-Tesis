@@ -15,7 +15,7 @@ class studentController extends Controller
         public function index()
         {
            
-            $this->_view->verClases= $this->std_model->mostrar_clases();
+            $this->_view->GetClases= $this->std_model->mostrar_clases();
             $this->_view->datos_user =$this->std_model->mostrar_usuario();
             $this->_view->anio_escol = $this->std_model->anio_escol();
             $this->_view->titulo =  'Estudiante';
@@ -33,14 +33,17 @@ class studentController extends Controller
             $this->_view->titulo = 'Perfil';
             $this->_view->renderizar('perfil','student');
         }
-        public function Ver_clases() //vista ver clases
+
+        public function ClaseDia() //vista para ver las clases del dia
         {
-           $this->_view->titulo = 'Clases';
-           $this->_view->renderizar('Ver_clases','student');
+            $this->_view->titulo = 'Clases';
+            $this->_view->renderizar('ClaseDia','student');
         }
+        
 
        
 
         
-    }
+}
+
     ?>

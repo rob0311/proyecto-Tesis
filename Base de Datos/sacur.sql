@@ -91,11 +91,10 @@ CREATE TABLE IF NOT EXISTS `sacur`.`clase_dia` (
   `idclaseDia` VARCHAR(20) NOT NULL,
   `fecha` DATE NOT NULL,
   `tema` VARCHAR(45) NOT NULL,
-  `contenido` VARCHAR(45) NOT NULL,
+  `contenido` MEDIUMTEXT NOT NULL,
   `clase_idclase` VARCHAR(20) NOT NULL,
   `preguntas_idPreguntas` INT NOT NULL,
   `asignar_tarea_id_tare` INT NOT NULL,
-  `asistencia` TINYINT NULL,
   INDEX `fk_clase_dia_clase1_idx` (`clase_idclase` ASC),
   INDEX `fk_clase_dia_preguntas1_idx` (`preguntas_idPreguntas` ASC),
   INDEX `fk_clase_dia_asignar_tarea1_idx` (`asignar_tarea_id_tare` ASC),
@@ -115,7 +114,6 @@ CREATE TABLE IF NOT EXISTS `sacur`.`clase_dia` (
     REFERENCES `sacur`.`asignar_tarea` (`id_tare`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
-
 
 -- -----------------------------------------------------
 -- Table `sacur`.`asistencia`
@@ -168,4 +166,19 @@ CREATE TABLE IF NOT EXISTS `sacur`.`Notas` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
+-- -----------------------------------------------------
+-- Table `sacur`.`Multimedia`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `sacur`.`Multimedia` (
+  `idMultimedia` INT NOT NULL AUTO_INCREMENT,
+  `imagenes` BLOB NULL,
+  `Documentos` BLOB NULL,
+  `clase_dia_idclaseDia` VARCHAR(20) NOT NULL,
+  PRIMARY KEY (`idMultimedia`),
+  INDEX `fk_Multimedia_clase_dia1_idx` (`clase_dia_idclaseDia` ASC),
+  CONSTRAINT `fk_Multimedia_clase_dia1`
+    FOREIGN KEY (`clase_dia_idclaseDia`)
+    REFERENCES `sacur`.`clase_dia` (`idclaseDia`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
 

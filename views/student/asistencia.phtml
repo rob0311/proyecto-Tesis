@@ -1,4 +1,4 @@
-
+<!-- ventana Modal de asistencia -->
  <div class="showback">
               <!-- Modal -->
               <div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="z-index: 100000">
@@ -15,11 +15,11 @@
                  
           
          <div class="col-md-12">
-         <p> Seleccione la Asignatura</p>
-         <select  class="form-control" name="carrera" id="select_carrera">
-         <?php foreach ($this->asig_recib_anio as $asig_recib_anio) { ?>
-          <option value="<?=$asig_recib_anio['nombre']?>">
-             <?=$asig_recib_anio['nombre']?>
+         <p> Seleccione la clase</p>
+         <select  class="form-control" name="asistencia_clase" id="select_carrera">
+         <?php foreach ($this->verClases as $classes) { ?>
+          <option value="<?=$classes['Nombre']?>">
+             <?=$classes['Nombre']?>
          </option>
                  
           <?php } ?>

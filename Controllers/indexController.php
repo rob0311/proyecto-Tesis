@@ -16,7 +16,7 @@ public function index()
         $this->_view->setJs(array("validarLogin"));
         $this->_view->render('index');
 
-     
+
         
 // registrar estudiante
         if($this->getInt('enviarRegisEst')==1){
@@ -62,8 +62,7 @@ public function index()
     } 
       //fin de la funcion index
            //login estudiante
-    
-
+         
   
 public function verificarCarnet()
      {
@@ -143,6 +142,11 @@ public function verificarEmailp()
         $this->redireccionar();
     }
   
+    public function crearcuenta()
+    {
+        $this->_view->titulo='CREAR CUENTA';
+        $this->_view->render('crearcuenta','index');
+    }
 
 }
 

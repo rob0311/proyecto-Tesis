@@ -1,3 +1,4 @@
+<body>
 <?php if(isset($_layoutParams2['js']) && count($_layoutParams2['js']))
     for($i=0;$i<count($_layoutParams2['js']);$i++)
         echo      "<script src='". $_layoutParams2['js'][$i]."'></script>";
@@ -22,7 +23,19 @@
 		</div>
     <div class="form-group text-center">
     <p>
-			<input type="submit" value="Crear Cuenta" class="btn btn-info" style="color: #FFF;">
+		<a href="<?php echo BASE_URL."index/crearcuenta/"?>">
+			<h4>Crear cuenta</h4>
+			<!--<input type="" id="crear" value="Crear Cuenta" class="btn btn-info" style="color: #FFF;" >-->
+			</a>
 		</div>
 	</form>
 </div>
+
+<div id="crear" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-contenido">
+		<a href="#">X</a>
+		<h2>Crea tu cuenta</h2>
+		
+	</div>
+</div>
+</body>

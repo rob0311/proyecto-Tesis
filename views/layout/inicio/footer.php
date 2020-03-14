@@ -1,5 +1,5 @@
 	
-		<!--======================================== Pie de pagina ========================================-->
+	<!--======================================== Pie de pagina ========================================-
 	<footer class="full-reset footer" id="footer"  >
 		<div class="full-reset" style="padding: 15px 0;">
 			<div class="container">
@@ -28,11 +28,11 @@
 		
 		<a href="#slider" id="back-top"><i class="fa fa-angle-up fa-5x"></i></a>
 
-		<!-- Essential jQuery Plugins
-		================================================== -->
-		<!-- Main jQuery -->
+		Essential jQuery Plugins
+		================================================== 
+		 Main jQuery
        
-	
+	-->
      
 		<!-- Twitter Bootstrap -->
         <script src="<?php echo $_layoutParams2['ruta_js'];?>bootstrap.min.js"></script>
@@ -47,6 +47,7 @@
 		<!-- jquery.appear -->
         <script src="<?php echo $_layoutParams2['ruta_js'];?>ripples.min.js"></script>
 		<script src="<?php echo $_layoutParams2['ruta_js'];?>sweetalert2.min.js"></script>
+		<script src="<?php echo $_layoutParams2['ruta_js'];?>myscript.js"></script>
 			<div class="text-center">
                     <p>  &copy; Copyrights <strong>UNAN-LEON</strong>. Derecho Reservados </p>
 					</div>

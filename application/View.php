@@ -135,11 +135,11 @@ public function __construct(Request $peticion)
                                 );
                                
     
-      $js=array();
+      /*$js=array();
       if(count($this->_js))
        {
         $js=$this->_js;
-       }
+       }*/
 
       
      $_layoutParams2 = array(
@@ -150,9 +150,9 @@ public function __construct(Request $peticion)
           'ruta_public_js' => BASE_URL . 'public/js/',
           'ruta_public_img' => BASE_URL . 'public/img/',
           
-          'menu'=>$menu,
+          /*'menu'=>$menu,
           'js'=>$js
-                       );
+     */           );
 
 
 

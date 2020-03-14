@@ -25,7 +25,6 @@
         <link rel="stylesheet" href="<?php echo $_layoutParams2['ruta_css'];?>ripples.min.css">
         <link rel="stylesheet" href="<?php echo $_layoutParams2['ruta_css'];?>sweetalert2.css">
         <link rel="stylesheet" href="<?php echo $_layoutParams2['ruta_css'];?>miestilo.css">
-        
-
+        <link rel="stylesheet" href="<?php echo $_layoutParams2['ruta_css']?>micss.css">
   
         </header>

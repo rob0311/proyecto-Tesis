@@ -39,7 +39,7 @@
 		<!-- jquery.fancybox.pack -->
         <script src="<?php echo $_layoutParams2['ruta_js'];?>jquery.mCustomScrollbar.concat.min.js"></script>
 		<!-- jquery.mixitup.min -->
-        <script src="<?php echo $_layoutParams2['ruta_js'];?>jquery-3.1.1.min.js"></script>
+       
 		<!-- jquery.parallax -->
         <script src="<?php echo $_layoutParams2['ruta_js'];?>main.js"></script>
 		<!-- jquery.countTo -->

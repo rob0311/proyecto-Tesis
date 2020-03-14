@@ -4,10 +4,12 @@
 ?>
 
 <div class="full-box login-container cover">
-	<form action="" method="POST" autocomplete="off" class="logInForm">
+	<form id="form_log_est" name="formlogEst" action="" method="post" autocomplete="off" class="logInForm" >
+	
 		<p class="text-center text-muted"><i class="zmdi zmdi-account-circle zmdi-hc-5x"></i></p>
 		<p class="text-center text-muted text-uppercase">Inicia sesión con tu cuenta</p>
-		<div class="form-group label-floating">
+
+	<div class="form-group label-floating">
 		  <label class="control-label" for="UserName">Usuario</label>
 		  <input required="" class="form-control" id="carnet" name="carnet" type="text" style="color: #FFF;">
 		  <p class="help-block">Escribe tú nombre de usuario</p>
@@ -17,12 +19,18 @@
 		  <input required="" class="form-control" id="password" name="password" type="password" style="color: #FFF;">
 		  <p class="help-block">Escribe tú contraseña</p>
 		</div>
+		
+		<div id="Errorlog" style="color: #FFF;"  > 
+           <?php if(isset($this->_error))echo $this->_error; ?>
+          
+          </div>
+
+
+
 		<div class="form-group text-center">
-			<input type="submit" value="Iniciar sesión" class="btn btn-info" style="color: #FFF;">
+		
+<input type="submit" value="Iniciar sesión" id="btn" class="btn btn-info" style="color: #FFF;">
 		</div>
-    <div class="form-group text-center">
-    <p>
-			<input type="submit" value="Crear Cuenta" class="btn btn-info" style="color: #FFF;">
-		</div>
+   
 	</form>
 </div>

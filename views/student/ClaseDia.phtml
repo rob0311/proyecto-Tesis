@@ -2,7 +2,8 @@
     for($i=0;$i<count($_layoutParams['js1']);$i++)
         echo "<script src='". $_layoutParams['js1'][$i]."'></script>";
 ?> 
-
+ <?php   include_once ROOT.'views'.DS.'student'.DS.'asistencia.phtml'; ?>
+           
  
  
    <section id="main-content">
@@ -48,20 +49,77 @@ Contenido de la clase:::::::::
           <div class="col-lg-3 ds">
             <!--panel derecho-->
             <div class="donut-main">
-         <h1><i class="fa fa-cog fa-5x"></i></h1>
+         <h3> Menu </h3>
              <!-- WEATHER PANEL -->
               <div class="col-md-12"><!-- en el css style.css se carga el fondo  -->
-               
-                  
-                  
+              
+         
+           <ul class="nav pull-cente top-menu">
+      
+          <li> <a class="logout" href="#" data-toggle="modal" data-target="#myModal" > Marcar Asistencia  </a></li>
+            </ul>
+           
+                <!-- RECENT ACTIVITIES SECTION -->
+            <h4 class="centered mt">Documentacion</h4>
+            <!-- First Activity -->
+            <div class="desc">
+              <div class="thumb">
+                <span class="badge bg-theme"><i class="fa fa-file"></i></span>
+              </div>
+              <div class="details">
+                <p>
                  
-                <H5> Menu Derecho </H5>
+                  <br/>
+                  Archivos de la clase
+                </p>
+              </div>
+            </div>
+            <!-- Second Activity -->
+         <div class="desc">
+              <div class="thumb">
+                <span class="badge bg-theme"><i class="fa fa-book"></i></span>
+              </div>
+              <div class="details">
+                <p>
+                 
+                  <br/>
+                  Tareas
+                </p>
+              </div>
+            </div>
+            <!-- Third Activity -->
+          <div class="desc">
+              <div class="thumb">
+                <span class="badge bg-theme"><i class="fa fa-file"></i></span>
+              </div>
+              <div class="details">
+                <p>
+                 
+                  <br/>
+                  trabajos de la clase
+                </p>
+              </div>
+            </div>
+            <!-- Fourth Activity -->
+           <div class="desc">
+              <div class="thumb">
+                <span class="badge bg-theme"><i class="fa fa-file"></i></span>
+              </div>
+              <div class="details">
+                <p>
+                 
+                  <br/>
+                  Archivos de la clase
+                </p>
+              </div>
+            </div>
+
                
           
-              </div>
+            
                  </div>
          
-           
+           </div>
            
            
           </div>
@@ -74,5 +132,6 @@ Contenido de la clase:::::::::
      
     </section>
     <!--main content end-->
+   
 
-           
+    

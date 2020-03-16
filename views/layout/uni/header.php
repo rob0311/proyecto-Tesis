@@ -275,11 +275,7 @@
         </li>
         
         <li>
-      <a href="#" data-toggle="modal" data-target="#myModal">
-         <i class="fa fa-book"></i>
-            <span>Marcar Asistencia </span>
-           </a>
-         </li>
+   
 
      <li>
           <a href="#">

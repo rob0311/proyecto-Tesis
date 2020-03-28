@@ -3,28 +3,32 @@
         echo "<script src='". $_layoutParams['js1'][$i]."'></script>";
 ?> 
  <?php   include_once ROOT.'views'.DS.'student'.DS.'asistencia.phtml'; ?>
-           
  
  
    <section id="main-content">
       <section class="wrapper ">
+        <?php foreach ($this->GetClaseDia as $GetClaseDia) { ?>
         <div class="row mt">
-          <div class="col-lg-9 ">
+          <div class="col-lg-10 ">
             <!--CUSTOM CHART START -->
             <div class="style-head" style="font-weight: bold;">
-              <h3> Titulo de la clase</h3>
-            </div>
+               <div class="col-lg-8 "> <h4>codigo: <?=$GetClaseDia['clase_idclase']?> </h4> </div>
+          <div class="col-lg-4 "> <h4>Fecha: <?=$GetClaseDia['fecha']?> </h4></div>
+           
+          <h3 class="text-center">Tema: <?=$GetClaseDia['tema']?></h3>
+         
+        </div>
             
-<!--tabla de asignaturas-->
-
-      <section class="wrapper">
-      
-        <div class="row mt">
+  <section class="wrapper">
+         <div class="row mt">
           <div class="col-md-12">
             <div class="content-panel">
           
-          
-Contenido de la clase:::::::::
+            <strong><h2> INTRODUCCION</h2></strong>
+        <p class="styletex">
+          <br>
+          <?=$GetClaseDia['contenido']?>
+        </p>
  
  
             </div>
@@ -33,48 +37,49 @@ Contenido de la clase:::::::::
           <!-- /col-md-12 -->
         </div>
         <!-- /row -->
-
+ 
     
       </section>
   
     <!-- /fin de contenido -->
 
       
-            <!-- /row -->
+         <?php } ?>   <!-- /row -->
           </div>
           <!-- /col-lg-9 END SECTION MIDDLE -->
           <!-- **********************************************************************************************************************************************************
                Contenido SIDEBAR Derecho 
               *********************************************************************************************************************************************************** -->
-          <div class="col-lg-3 ds">
+          <div class="col-lg-2 ds">
             <!--panel derecho-->
             <div class="donut-main">
-         <h3> Menu </h3>
+         <h3> Opciones </h3>
              <!-- WEATHER PANEL -->
               <div class="col-md-12"><!-- en el css style.css se carga el fondo  -->
               
          
            <ul class="nav pull-cente top-menu">
       
-          <li> <a class="logout" href="#" data-toggle="modal" data-target="#myModal" > Marcar Asistencia  </a></li>
+         <!-- <li> <a class="logout" href="#" data-toggle="modal" data-target="#myModal" > Marcar Asistencia  </a></li> -->
+         <button id="button1" class="btn btn-success"> Marcar Asistencia</button>
             </ul>
            
                 <!-- RECENT ACTIVITIES SECTION -->
             <h4 class="centered mt">Documentacion</h4>
-            <!-- First Activity -->
+            <!-- First opcion -->
             <div class="desc">
               <div class="thumb">
-                <span class="badge bg-theme"><i class="fa fa-file"></i></span>
+                <span class="badge bg-theme"><i class="fa fa-archive"></i></span>
               </div>
               <div class="details">
                 <p>
                  
                   <br/>
-                  Archivos de la clase
+                  Archivos 
                 </p>
               </div>
             </div>
-            <!-- Second Activity -->
+            <!-- Second opcion -->
          <div class="desc">
               <div class="thumb">
                 <span class="badge bg-theme"><i class="fa fa-book"></i></span>
@@ -87,32 +92,20 @@ Contenido de la clase:::::::::
                 </p>
               </div>
             </div>
-            <!-- Third Activity -->
+            <!-- Third opcion -->
           <div class="desc">
               <div class="thumb">
-                <span class="badge bg-theme"><i class="fa fa-file"></i></span>
+                <span class="badge bg-theme"><i class="fa fa-clipboard"></i></span>
               </div>
               <div class="details">
                 <p>
                  
                   <br/>
-                  trabajos de la clase
+                  trabajos 
                 </p>
               </div>
             </div>
-            <!-- Fourth Activity -->
-           <div class="desc">
-              <div class="thumb">
-                <span class="badge bg-theme"><i class="fa fa-file"></i></span>
-              </div>
-              <div class="details">
-                <p>
-                 
-                  <br/>
-                  Archivos de la clase
-                </p>
-              </div>
-            </div>
+          
 
                
           

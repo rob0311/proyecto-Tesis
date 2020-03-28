@@ -16,5 +16,7 @@
         <script src="<?php echo $_layoutParams2['ruta_js'];?>ripples.min.js"></script>
 		<script src="<?php echo $_layoutParams2['ruta_js'];?>sweetalert2.min.js"></script>
 		<script src="<?php echo $_layoutParams2['ruta_js'];?>myscript.js"></script>
+		
 			
 		</footer>
+

@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-
-        <title>
-         <?php if(isset($this->titulo)) echo $this->titulo; ?>
-         </title>	
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Dashboard">
+  <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+  <title><?php if(isset($this->titulo)) echo $this->titulo; ?></title>
          <!-- Favicons -->
   <link href="<?php echo $_layoutParams2['ruta_img'];?>favicon.png" rel="icon">
   <link href="<?php echo $_layoutParams2['ruta_img'];?>apple-touch-icon.png" rel="apple-touch-icon">

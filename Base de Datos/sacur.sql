@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `sacur`.`clase` (
   INDEX `fk_clase_asignatura1_idx` (`asignatura_id_Asignatura` ASC));
 
 
--- -----------------------------------------------------
+ -----------------------------------------------------
 -- Table `sacur`.`preguntas`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sacur`.`preguntas` (
@@ -51,7 +51,9 @@ CREATE TABLE IF NOT EXISTS `sacur`.`preguntas` (
   `fecha` DATE NOT NULL,
   `pregunta` VARCHAR(200) NOT NULL,
   `activada` TINYINT NULL DEFAULT NULL,
-  PRIMARY KEY (`idPreguntas`));
+  `clase_dia_idclaseDia` VARCHAR(20) NOT NULL,
+  PRIMARY KEY (`idPreguntas`),
+  INDEX `fk_preguntas_clase_dia1_idx` (`clase_dia_idclaseDia` ASC));
 
 
 -- -----------------------------------------------------
@@ -80,9 +82,10 @@ CREATE TABLE IF NOT EXISTS `sacur`.`asignar_tarea` (
   `archivo` BLOB NULL DEFAULT NULL,
   `id_profesor` INT NOT NULL,
   `profesor_idprofesor` INT NOT NULL,
+  `clase_dia_idclaseDia` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`id_tare`),
-  INDEX `fk_asignar_tarea_profesor1_idx` (`profesor_idprofesor` ASC));
-
+  INDEX `fk_asignar_tarea_profesor1_idx` (`profesor_idprofesor` ASC),
+  INDEX `fk_asignar_tarea_clase_dia1_idx` (`clase_dia_idclaseDia` ASC));
 
 -- -----------------------------------------------------
 -- Table `sacur`.`clase_dia`
@@ -93,27 +96,15 @@ CREATE TABLE IF NOT EXISTS `sacur`.`clase_dia` (
   `tema` VARCHAR(45) NOT NULL,
   `contenido` MEDIUMTEXT NOT NULL,
   `clase_idclase` VARCHAR(20) NOT NULL,
-  `preguntas_idPreguntas` INT NOT NULL,
-  `asignar_tarea_id_tare` INT NOT NULL,
-  INDEX `fk_clase_dia_clase1_idx` (`clase_idclase` ASC),
-  INDEX `fk_clase_dia_preguntas1_idx` (`preguntas_idPreguntas` ASC),
-  INDEX `fk_clase_dia_asignar_tarea1_idx` (`asignar_tarea_id_tare` ASC),
+  INDEX `fk_clase_dia_clase1_idx` (`clase_idclase` ASC) ,
   PRIMARY KEY (`idclaseDia`),
   CONSTRAINT `fk_clase_dia_clase1`
     FOREIGN KEY (`clase_idclase`)
     REFERENCES `sacur`.`clase` (`idclase`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_clase_dia_preguntas1`
-    FOREIGN KEY (`preguntas_idPreguntas`)
-    REFERENCES `sacur`.`preguntas` (`idPreguntas`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_clase_dia_asignar_tarea1`
-    FOREIGN KEY (`asignar_tarea_id_tare`)
-    REFERENCES `sacur`.`asignar_tarea` (`id_tare`)
-    ON DELETE NO ACTION
     ON UPDATE NO ACTION);
+
+ 
 
 -- -----------------------------------------------------
 -- Table `sacur`.`asistencia`

@@ -37,6 +37,10 @@
         color:rgb(169, 170, 173);
         font-style: italic;
     }
+    .styletex{
+        font-style: Arial;
+        font-size: 18pt; 
+    }
     .smscolor{
         color:rgb(6, 42, 121);
         font-style: italic;

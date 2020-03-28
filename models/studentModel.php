@@ -63,6 +63,13 @@ class studentModel extends Model{
         return $datos->fetchAll();
     }*/
     
+
+    public function mostrar_claseDia($idclase)
+    {
+
+   $datos=$this->_db->query("SELECT * FROM clase_dia where clase_idclase='$idclase'");
+        return $datos->fetchAll();
+    }
 }
 
 ?>;

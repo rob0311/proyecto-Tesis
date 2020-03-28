@@ -11,11 +11,13 @@ class View{
 
   private $_controlador;
   private $_js1;
+  private $_js;
 
 public function __construct(Request $peticion)
   {
       $this->_controlador =$peticion->getControlador();
       $this->_js1=array();
+      $this->_js=array();
   }
   public function renderizar($vista,$item=false)
   {
@@ -117,29 +119,17 @@ public function __construct(Request $peticion)
  public function render($vista)
  {// menu 
     $menu = array(
-      array(
-       'id' => 'Home',
-       'titulo' => 'Home',
-       'enlace' => BASE_URL."#body"
-          ),
-       array(
-            'id' => 'login',
-            'titulo' => 'Iniciar sesion',
-            'enlace' => BASE_URL."#sesion"
-              ),
-       array(
-             'id' => 'contac',
-            'titulo' => 'contactos',
-            'enlace' => BASE_URL."#footer"
-                                   ),                         
-                                );
-                               
+                       
+                );
+                            
     
-      $js=array();
-      if(count($this->_js))
-       {
+     $js=array();
+    if(count($this->_js))
+    {
         $js=$this->_js;
-       }
+    }
+      
+     
 
       
      $_layoutParams2 = array(

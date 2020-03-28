@@ -5,10 +5,11 @@
 
 <?php if (isset($this->GetClases) && count($this->GetClases)):?> 
  <!--pagina de inicio de Estudiante-->
-   <section id="main-content">
-      <section class="wrapper ">
-        <div class="row mt">
-          <div class="col-lg-9 ">
+ <section id="main-content">
+    <section class="wrapper ">
+       <div class="row mt">
+
+ <div class="col-lg-9 ">
             <!--CUSTOM CHART START -->
             <div class="style-head">
               <h3> Clases Recibidas</h3>
@@ -58,43 +59,24 @@
          </table>
 
 <?php else: ?>
-
-<h1 class=" titles text-center">No hay Clases!</h1>
+<h1 class=" titles text-center">No hay Clases! </h1>
+<!--<img src="<?php echo $_layoutParams['ruta_img'];?>Noclases.jpg"  width="60%">-->
 
 <?php endif; ?>    
  
-            </div>
-            <!-- /content-panel -->
-          </div>
-          <!-- /col-md-12 -->
-        </div>
+           </div> <!-- /content-panel -->
+         <!-- /col-md-12 -->
+           </div>
         <!-- /row -->
-
-    
-      </section>
-  
+         </div>
+       
+     </section>
+  </div>
     <!-- /fin de tablas de contenido -->
 
-            <!--custom chart end-->
-            
-            <div  style="background-color:white " class="container-fluid lead fc-header-title h2" ><!--clase para crear fondo blanco-->
- <!--contenido debajo de la tablas de asignaturas-->
-  
-              
-               <!--ventana Modal de asistencia-->
-      <?php   include_once ROOT.'views'.DS.'student'.DS.'asistencia.phtml'; ?>
-
-
-               
-              <!-- /col-md-4 -->
-            </div>
-            <!-- /row -->
-          </div>
-          <!-- /col-lg-9 END SECTION MIDDLE -->
-          <!-- **********************************************************************************************************************************************************
-               Contenido SIDEBAR Derecho 
+              <!-- Contenido SIDEBAR Derecho 
               *********************************************************************************************************************************************************** -->
-          <div class="col-lg-3 ds">
+     <div class="col-lg-3 ds">
             <!--panel derecho-->
             <div class="donut-main">
          <h4>Carrera  / año cursado</h4>

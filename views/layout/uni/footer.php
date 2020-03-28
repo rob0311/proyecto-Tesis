@@ -13,7 +13,7 @@
       </div>
     </footer>
     <!--footer end-->
-  </section>
+  
   <!-- js placed at the end of the document so the pages load faster -->
   
     <script src="<?php echo $_layoutParams['ruta_js'];?>modernizr-2.6.2.min.js"></script>
@@ -30,6 +30,7 @@
   <!--script for this page-->
   <script src="<?php echo $_layoutParams['ruta_js'];?>sparkline-chart.js"></script>
   <script src="<?php echo $_layoutParams['ruta_js'];?>zabuto_calendar.js"></script>
+  <script src="<?php echo $_layoutParams['ruta_js'];?>sweetalert2.min.js"></script>
   
   <script type="application/javascript">
     $(document).ready(function() {

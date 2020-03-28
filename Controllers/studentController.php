@@ -19,7 +19,7 @@ class studentController extends Controller
             $this->_view->datos_user =$this->std_model->mostrar_usuario();
             $this->_view->anio_escol = $this->std_model->anio_escol();
             $this->_view->titulo =  'Estudiante';
-            $this->_view->setJs1(array('filtro'));
+           
             $this->_view->renderizar('index');
          }
 
@@ -34,10 +34,13 @@ class studentController extends Controller
             $this->_view->renderizar('perfil','student');
         }
 
-        public function ClaseDia() //vista para ver las clases del dia
+        public function ClaseDia($idclase) //vista para ver las clases del dia
         {
             $this->_view->titulo = 'Clases';
+            $this->_view->GetClaseDia = $this->std_model->mostrar_claseDia($idclase);
+            $this->_view->setJs1(array('modal'));
             $this->_view->renderizar('ClaseDia','student');
+           
         }
         
 

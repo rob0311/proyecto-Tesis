@@ -70,6 +70,34 @@ class studentModel extends Model{
    $datos=$this->_db->query("SELECT * FROM clase_dia where clase_idclase='$idclase'");
         return $datos->fetchAll();
     }
+
+    // asistencia
+    public function asistir_clase()
+    {
+      $carnt_user=Session::get("Carnet_Est"); //capturar el id del estudiante
+      $fecha=date("Y-m-d"); //capturar la fecha actual
+      $id_dia=("tem03");
+   $estado=$this->_db->query(" SELECT * FROM `asistencia` WHERE estudiante_carnet='$carnt_user' AND clase_dia_idclaseDia='$id_dia' AND fecha='$fecha' ");
+  
+   if(!$estado->fetch()) {
+
+     $this->_db->prepare("insert into asistencia(estudiante_carnet,clase_dia_idclaseDia,fecha)
+                       VALUES(:carnEst , :idDia , :fecha) ")
+                                  ->execute(
+                                    array(
+                               'carnEst' => $carnt_user,
+                               'idDia' => $id_dia,
+                               'fecha' => $fecha
+                                        )
+                                    );
+                      return "Bienvenido a Clase";
+              
+     }
+     else
+            return "Ya marco Asistencia";
+}
+
+
 }
 
 ?>;

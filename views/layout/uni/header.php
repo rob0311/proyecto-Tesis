@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="<?php echo $_layoutParams['ruta_css'];?>sweetalert2.css">
   
   <!-- Modernizer Script for old Browsers   -->
-  <script src="<?php echo $_layoutParams['ruta_js'];?>jquery.min.js"></script>
+  <script src="<?php echo $_layoutParams['ruta_js'];?>jquery-3.1.1.min.js"></script>
 </head>
 <body>                                                                                                                   
   <section id="container">

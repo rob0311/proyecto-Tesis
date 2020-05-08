@@ -112,6 +112,7 @@ CREATE TABLE IF NOT EXISTS `sacur`.`clase_dia` (
 CREATE TABLE IF NOT EXISTS `sacur`.`asistencia` (
   `estudiante_carnet` VARCHAR(10) NOT NULL,
   `clase_dia_idclaseDia` VARCHAR(20) NOT NULL,
+  `fecha` DATE NOT NULL,
   INDEX `fk_asistencia_estudiante1_idx` (`estudiante_carnet` ASC),
   INDEX `fk_asistencia_clase_dia2_idx` (`clase_dia_idclaseDia` ASC));
 

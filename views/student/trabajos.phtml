@@ -3,30 +3,31 @@
         echo "<script src='". $_layoutParams['js1'][$i]."'></script>";
 ?> 
  
-  <section id="main-content">
+ 
+ 
+   <section id="main-content">
       <section class="wrapper ">
-        <?php foreach ($this->GetClaseDia as $GetClaseDia) { ?>
+     
         <div class="row mt">
           <div class="col-lg-10 ">
-          <div id="resultado_asistencia"> <?php if(isset($this->_error))echo $this->_error; ?> </div>
             <!--CUSTOM CHART START -->
             <div class="style-head" style="font-weight: bold;">
-               <div class="col-lg-8 "><h4><span>codigo:</span> <span id="id_dia"><?=$GetClaseDia['idclaseDia']?></span></h4> </div>
-          <div class="col-lg-4 "> <h4>Fecha: <?=$GetClaseDia['fecha']?> </h4></div>
+               <div class="col-lg-8 "> <h4>codigo </h4> </div>
+          <div class="col-lg-4 "> <h4>fecha </h4></div>
            
-          <h3 class="text-center">Tema: <?=$GetClaseDia['tema']?></h3>
+          <h3 class="text-center"> Trabajos</h3>
          
         </div>
-            
+           <?php for ($i =0; $i <3;$i++): ?>   
   <section class="wrapper">
          <div class="row mt">
           <div class="col-md-12">
             <div class="content-panel">
           
-            <strong><h2> INTRODUCCION</h2></strong>
+            <strong><h2> titulo de los trabajos</h2></strong>
         <p class="styletex">
           <br>
-          <?=$GetClaseDia['contenido']?>
+          Contenido de los trabajos
         </p>
  
  
@@ -39,11 +40,12 @@
  
     
       </section>
+       <?php endfor;?>   
   
     <!-- /fin de contenido -->
 
       
-         <?php } ?>   <!-- /row -->
+       <!-- /row -->
           </div>
           <!-- /col-lg-9 END SECTION MIDDLE -->
           <!-- **********************************************************************************************************************************************************
@@ -55,15 +57,11 @@
          <h3> Opciones </h3>
              <!-- WEATHER PANEL -->
               <div class="col-md-12"><!-- en el css style.css se carga el fondo  -->
-              <form id="asist" name="asist" action="" method="post" autocomplete="off" class="logInForm" >
-              <label>Codigo de la clase del dia</label>
-           <input required="" class="form-control" id="asistir" name="asistir" type="text" >
-             <button type="submit" class="btn btn-success" id="btn_asis">Asistir</button>
-             </form> 
-             
+              
          
-           <ul class="nav pull-center top-menu">
-           <li><a class="logout" href="<?php echo BASE_URL . 'student/asistencia/' ; ?>"> Cerrar seccion</a></li><!-- boton para probar la funcion asistir-->
+           <ul class="nav pull-cente top-menu">
+      
+        
             </ul>
            
                 <!-- RECENT ACTIVITIES SECTION -->

@@ -227,6 +227,18 @@ ul.top-menu > li > .logout {
 	background: #4ECDC4;
 	margin-top: 15px;
 }
+ul.top-menu > li > .logoutv {
+	color: #fffefe;
+	font-size: 16px;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border: 1px solid #f6f7f5 !important;
+	padding: 5px 15px;
+	margin-right: 15px;
+	background: rgb(48, 145, 80);
+    margin-top: 15px;
+    
+}
 
 
 /*sidebar navigation*/
@@ -768,7 +780,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 /* Dash Side */
 
 .ds {
-	background: #d6d9dc;
+	background: #fcfcfc;
 	padding-top: 20px;
 }
 
@@ -789,7 +801,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 }
 
 .ds .desc:hover {
-	background: #ffffff;
+	background: #e2e7e9;
 }
 
 .ds .thumb {

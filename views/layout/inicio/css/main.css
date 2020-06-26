@@ -51,6 +51,11 @@ body, html{
 	width: 100%;
 	box-sizing: border-box;
 }
+.box{
+
+	border: 1px solid rgba(255,255,255,.3);
+	border-radius: 4px;
+}
 .cover{
 	background: 50% 50% no-repeat;
 	background-size: cover;
@@ -84,6 +89,18 @@ body, html{
 .logInForm p,
 .logInForm label{
 	color: #FFF;
+}
+.cuenta{
+	position: absolute;
+	color: #fff;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 90%;
+	max-width: 300px;
+	padding: 15px;
+	border: 1px solid rgba(255,255,255,.3);
+	border-radius: 4px;
 }
 /*============ Partes del dashboard*/
 .dashboard-sideBar,

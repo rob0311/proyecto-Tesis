@@ -15,7 +15,7 @@ class profesorController extends Controller
         public function index()
         {
             $this->_view->titulo = 'Profesor';
-            $this->_view->renderizar('index');
+            $this->_view->renderprofesor('index');
     
     
         }

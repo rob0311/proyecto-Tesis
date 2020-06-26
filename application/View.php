@@ -160,6 +160,49 @@ public function __construct(Request $peticion)
 
 // fin de funcion Render
 
+
+// funcion para mostrar el header del profesor
+public function renderprofesor($vista)
+{// menu 
+   $menu = array(
+                      
+               );
+                           
+               $js1=array();
+               if(count($this->_js1))
+               {
+                   $js1=$this->_js1;
+               }
+     
+    
+
+     
+   $_layoutParams=array(
+    'ruta_css'=>BASE_URL.'/views/layout/'.DEFAULT_LAYOUT.'/css/',
+      'ruta_img'=>BASE_URL.'/views/layout/'.DEFAULT_LAYOUT.'/img/',
+      'ruta_js'=>BASE_URL.'/views/layout/'.DEFAULT_LAYOUT.'/js/',
+      'ruta_fuente'=>BASE_URL.'/views/layout/'.DEFAULT_LAYOUT.'/fonts/',
+      'menu'=>$menu,
+      'js1'=>$js1
+  );
+
+
+
+
+  $rutaView=ROOT.'views'.DS.$this->_controlador.DS.$vista.'.phtml';
+  if(is_readable($rutaView)){
+      include_once ROOT.'views'.DS.'profesor'.DS.'header.php';
+      include_once $rutaView;
+      include_once ROOT.'views'.DS.'layout'.DS.DEFAULT_LAYOUT.DS.'footer.php';
+
+  }
+  else{
+      throw new Exception('Error de vista: '.$rutaView);
+  }
+ }
+
+// fin de funcion Render
+
 //funcion cargar java scrip de pagina de inicio
   public function setJs(array $js)
   {

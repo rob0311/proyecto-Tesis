@@ -2,60 +2,106 @@
     for($i=0;$i<count($_layoutParams2['js']);$i++)
         echo      "<script src='". $_layoutParams2['js'][$i]."'></script>";
 ?>
+</head>
+<body> 
+	
+<div class="container">
+	<div class="logInForm mt " >
+		<h3 class="text-center">Tipo de Cuenta</h3>
+	          <ul class="nav  nav-pills  ">
+                  <li  id="btn-estudiante" name="estudiante">
+                      <a data-toggle="tab" href="#">ESTUDIANTE</a>
+                    </li>
+                  <li id="btn-profesor" name="profesor"> 
+                      <a data-toggle="tab" href="#" class="contact-map">PROFESOR</a>
+                  </li>
+                 
+               </ul>
+     </div>
+ </div>
 
-<div class="full-box login-container cover">
+ 
+<div class="full-box login-container cover" id="estudiante">
 	<form id="form_log_est" name="formlogEst" action="" method="post" autocomplete="off" class="logInForm" >
 	
-		<p class="text-center text-muted"><i class="zmdi zmdi-account-circle zmdi-hc-5x"></i></p>
-		<p class="text-center text-muted text-uppercase">Inicia sesión con tu cuenta</p>
+		  <p class="text-center text-muted"><i class="zmdi zmdi-account-circle zmdi-hc-5x"></i></p>
+		  <p class="text-center text-muted text-uppercase">Inicia sesión con tu cuenta</p>
+          <p class="text-center text-muted text-uppercase">ESTUDIANTE</p>
 
-	<div class="form-group label-floating">
-		  <label class="control-label" for="UserName">Usuario</label>
-		  <input required="" class="form-control" id="carnet" name="carnet" type="text" style="color: #FFF;">
-		  <p class="help-block">Escribe tú nombre de usuario</p>
-		</div>
-		<div class="form-group label-floating">
-		  <label class="control-label" for="UserPass">Contraseña</label>
-		  <input required="" class="form-control" id="password" name="password" type="password" style="color: #FFF;">
-		  <p class="help-block">Escribe tú contraseña</p>
-		</div>
+	  <div class="form-group label-floating">
+		   <label class="control-label" for="UserName">Carnet</label>
+		   <input required="" class="form-control" id="carnet" name="carnet" type="text" style="color: #FFF;">
+		   <p class="help-block">Escribe tú Carnet</p>
+	  </div>
+
+	  <div class="form-group label-floating">
+		   <label class="control-label" for="UserPass">Contraseña</label>
+		   <input required="" class="form-control" id="password" name="password" type="password" style="color: #FFF;">
+		   <p class="help-block">Escribe tú contraseña</p>
+	  </div>
 		
-		<div id="Errorlog" style="color: #FFF;"  class="text-center" > 
+	  <div id="Errorlog" style="color: #FFF;"  class="text-center" > 
            <?php if(isset($this->_error))echo $this->_error; ?>
-          
-          </div>
+       </div>
 
-
-
-		<div class="form-group text-center">
-  
-		
-<input type="submit" value="Iniciar sesión" id="btn" class="btn btn-info" style="color: #FFF;">
-		</div>
+     <div class="form-group text-center">
+       <input type="submit" value="Iniciar sesión" id="btn" class="btn btn-info" style="color: #FFF;">
+	 </div>
    
-		<div class="form-group text-center">
-	
-	
-	
-    
-      
-    <li  class="dropdown nav"><a href="#" class="dropdown-toggle text-center" data-toggle="dropdown">   CREAR CUENTA<b class="caret"></b></a>
-            <ul class="dropdown-menu">
+	 <div class="form-group text-center">
+	     <li  class="dropdown nav">
+	     	<a href="#" class="dropdown-toggle text-center" data-toggle="dropdown">   
+	     		CREAR CUENTA<b class="caret"></b></a>
+             <ul class="dropdown-menu">
                <li><a href="<?php echo BASE_URL."index/crearcuenta/"?>">Estudiante</a></li>
                <li><a href="<?php echo BASE_URL."index/crearcuenta/"?>">Profesor</a></li>
             </ul>
         </li><!-- /fin de li -->
+   	</div>
+	
+</form>
+</div>
+<!-- /***************************************************************************************************** */ -->
+<!-- /formulario del profesor -->
+<div class="full-box login-container cover" id="profesor">
+	<form id="form_log_prof" name="formlogEst" action="" method="post" autocomplete="off" class="logInForm" >
+	
+		  <p class="text-center text-muted"><i class="zmdi zmdi-account-circle zmdi-hc-5x"></i></p>
+		  <p class="text-center text-muted text-uppercase">Inicia sesión con tu cuenta</p>
+          <p class="text-center text-muted text-uppercase">PROFESOR</p>
+
+	  <div class="form-group label-floating">
+		   <label class="control-label" for="UserName">Usuario</label>
+		   <input required="" class="form-control" id="users" name="users" type="text" style="color: #FFF;">
+		   <p class="help-block">Escribe tú nombre de usuario</p>
+	  </div>
+
+	  <div class="form-group label-floating">
+		   <label class="control-label" for="UserPass">Contraseña</label>
+		   <input required="" class="form-control" id="pass" name="pass" type="password" style="color: #FFF;">
+		   <p class="help-block">Escribe tú contraseña</p>
+	  </div>
+		
+	  <div id="Errorprof" style="color: #FFF;"  class="text-center" > 
+           <?php if(isset($this->_error))echo $this->_error; ?>
+       </div>
+
+     <div class="form-group text-center">
+       <input type="submit" value="Iniciar sesión" id="btn" class="btn btn-info" style="color: #FFF;">
+	 </div>
    
- 
-		
+	 <div class="form-group text-center">
+	     <li  class="dropdown nav">
+	     	<a href="#" class="dropdown-toggle text-center" data-toggle="dropdown">   
+	     		CREAR CUENTA<b class="caret"></b></a>
+             <ul class="dropdown-menu">
+               <li><a href="<?php echo BASE_URL."index/crearcuenta/"?>">Estudiante</a></li>
+               <li><a href="<?php echo BASE_URL."index/crearcuenta/"?>">Profesor</a></li>
+            </ul>
+        </li><!-- /fin de li -->
+   	</div>
 	
-		
-
-			
-	</div>
-	
-	</form>
-	</div>
-	<?php   include_once ROOT.'views'.DS.'index'.DS.'crearcuenta.phtml'; ?>
-
+</form>
+</div>
+ 	
 

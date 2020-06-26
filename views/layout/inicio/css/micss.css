@@ -260,4 +260,21 @@ html, body{
   .form-wrapper input[type="radio"]:checked + label h4{
     color: #3498db;
   }
+
+
+.mt {
+  margin-top:50px;
   
+}
+
+/*Content Panel*/
+.content-panel {
+  background: #ffffff;
+  box-shadow: 0px 3px 2px #aab2bd;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  position:center;
+}
+.content-panel h4 {
+  margin-left: 10px;
+}

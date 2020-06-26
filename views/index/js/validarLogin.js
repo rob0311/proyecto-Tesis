@@ -44,4 +44,33 @@ return est;
         
     })
 
+//********************************************************************************************************************************
+//validar login de profesor
+    $("#form_log_prof").submit(function(e){
+        var estado=true;
+        e.preventDefault();
+
+        var idp=$("#users").val() , idpass=$("#pass").val();
+        $.ajax({
+            async: false,
+            url:"index/loginProf",
+            data: {"users" :idp, "pass" :idpass},
+            type: "post",
+            success:(function(data){
+        
+                if(data!=0){
+                   
+                $("#Errorprof").html(data).fadeIn(500).fadeOut(7000);
+               
+                estado= false;
+            }
+            })
+        })
+
+        if(estado)
+  window.location.replace('profesor');
+return estado;
+        
+    })
+
 });

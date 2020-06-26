@@ -13,8 +13,9 @@ public function index()
     {
          $this->_view->titulo = 'SACUR';
          $this->_view->setJs(array('validar'));
-        $this->_view->setJs(array("validarLogin"));
-        $this->_view->render('index');
+         $this->_view->setJs(array("validarLogin"));
+         $this->_view->setJs(array("mostrarform"));
+         $this->_view->render('index');
 
 
         
@@ -126,14 +127,15 @@ public function verificarEmailp()
 
     //funcion login de Profesor
  public function loginProf(){
-    if  ($this->_login->getprof(
+    $dat=$this->_login->getprof(
        $this->getsql('users'),
-       $this->getSql('password')))   
+       $this->getSql('pass')); 
+       if ($dat)  
         {
            echo '0';
         }
       else
-       echo 'Usuario y/o Contraseña Incorrecta';
+       echo 'Usuario y/o Contraseña Incorrecta ';
     }//fin funcionlogin profesor
 
     public function cerrar()

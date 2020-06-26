@@ -30,8 +30,8 @@
         <link rel="stylesheet" href="<?php echo $_layoutParams2['ruta_css'];?>sweetalert2.css">
         <link rel="stylesheet" href="<?php echo $_layoutParams2['ruta_css'];?>miestilo.css">
         <link rel="stylesheet" href="<?php echo $_layoutParams2['ruta_css']?>micss.css">
+    
   
         <script src="<?php echo $_layoutParams2['ruta_js'];?>jquery-3.1.1.min.js"></script>
         <script src="<?php echo $_layoutParams2['ruta_js'];?>modernizr-2.6.2.min.js"></script>
   
-        </header>

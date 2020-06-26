@@ -1,4 +1,4 @@
-	
+
 		<!-- ======================================== Pie de pagina ======================================== -->
 		<footer class="full-reset footer" id="footer"  >
      
@@ -19,4 +19,6 @@
 		
 			
 		</footer>
+</body>	
 
+</html>

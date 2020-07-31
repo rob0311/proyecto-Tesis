@@ -1,0 +1,125 @@
+<!-- ventana Modal de asistencia -->
+ <div class="showback">
+              <!-- Modal -->
+<div class="modal fade " id="registroEstudiante" tabindex="-1" role="dialog" aria-labelleby="myLargeModalLabel" aria-hidden="true" style="z-index: 100000">
+           <div class="modal-dialog ">
+           <div class="modal-content">
+              <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Crear Cuenta Estudiante</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      
+                </div>
+        <div class="modal-body">
+
+                      
+   <div class="container" id="advanced-search-form">
+    <div class="container11  text-center ">
+    <h3>
+    <div id="Error" class="texcolor"><?php if(isset($this->_error))echo $this->_error; ?></div>
+    <div id="mensaje" class="smscolor"><?php if(isset($this->_mensaje))echo $this->_mensaje; ?></div>
+    </h3>
+   </div>
+ <h2>Registrate</h2>  
+     <form id="form_registro" class="form-Regis" action="" method="post" name="form2" >
+      <input type="hidden" value="1" name="enviarRegisEst" />
+         <div class="form-group">
+                <label for="first-name">Carnet</label>
+                <input type="text" class="form-control" placeholder="Carnet" id="carnetReg" name="carnetReg" required   autofocus>
+                </div>
+         <div class="form-group">
+                  <label for="first-name">Nombres</label>
+                  <input type="text" class="form-control" placeholder=" Nombres" id="Name" name="Name" required >
+                </div>
+         <div class="form-group">
+                  <label for="last-name">Apellidos</label>
+                  <input type="text" class="form-control " placeholder=" Apellidos" id="apellido"  name="apellido" required>
+               </div>
+        <div class="form-group">
+                 <label for="number">Numero de teléfono</label>
+                 <input type="number" class="form-control" placeholder="Numero de teléfono" id="number" name="number" required>
+              </div>
+        <div class="form-group">
+               
+                <label for="departamento">¿De que departamento resides?</label><br/>
+                 <select  class="form-control" name="departamento" id="pais">
+                   <option value="Managua">Managua</option>
+                   <option value="Masaya">Masaya</option> 
+                   <option value="Granada">Granada</option>
+                   <option value="Carazo">Carazo</option>
+                   <option value="Rivas">Rivas</option>  
+                   <option value="Chinandega">Chinandega</option>       
+                   <option value="Leon">Leon</option>
+                   <option value="Nueva segovia">Nueva Segovia</option>
+                   <option value="Madriz">Madriz</option>  
+                   <option value="Esteli">Esteli</option>
+                   <option value="Jinotega">Jinotega</option>
+                   <option value="Matagalpa">Matagalpa</option>
+                   <option value="Boaco">Boaco</option>
+                   <option value="Chontales">Chontales</option>
+                   <option value="Rio San Juan">Rio San Juan</option>
+                   <option value="RAAS">RAAS</option>  
+                   <option value="RAAN">RAAN</option>              
+             </select>
+         </div> 
+    <div class="form-group">
+                <label for="country">Ciudad</label>
+                <input type="text" class="form-control" placeholder="Ciudad" id="country" name="ciud" required>
+            </div>
+     <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" placeholder="Email" id="email_estudiante" name=" EMAIL" required>
+            </div>
+       <div class="form-group">
+                <label for="category">Carrera</label>
+                <input type="text" class="form-control" placeholder="Carrera" id="carrera" name="carrera" required>
+             </div>
+       <div class="form-group">
+                <label for="education">Contraseña</label>
+                <input type="password" class="form-control" placeholder="contraseña" id="pass1" name="pass1" required>
+            </div>
+      <div class="form-group">
+                <label for="education">Repita la contraseña</label>
+                <input type="password" class="form-control" placeholder="contraseña" id="pass2" name="pass2" required>
+            </div>
+                      
+        <div class="form-group">
+                <label>Genero</label>
+                <div class="form-animate-radio ">
+                    <label class="radio" >
+                        <input type="radio" name="genero" value="M" required />
+                        <span class="outer">
+                            <span class="inner"></span></span>Masculino
+                    </label>
+
+                    <label class="radio" >
+                        <input type="radio" name="genero" value="F" required />
+                        <span class="outer">
+                            <span class="inner"></span></span>Femenino
+                    </label>
+                    </div>         
+             </div>
+       <div class="form-group">
+                <label for="age">Fecha Nacimiento</label>
+                <input type="date" name="fnac" class="form-control" placeholder="Fecha Nacimiento" id="age" required>
+            </div>
+
+
+            <div class="clearfix"></div>
+           
+            <button type="submit" class="btn btn-info btn-lg btn-responsive" id="btn_registrar"> <span class="fa fa-check" aria-hidden="true"></span> Registrar</button>
+        </form>
+    </div>
+     
+
+
+
+  </div><!--fin de modal body-->
+            <div class="modal-footer">
+
+                     <button type="button" class="btn btn-info btn-lg btn-responsive" data-dismiss="modal">Cerrar</button>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>

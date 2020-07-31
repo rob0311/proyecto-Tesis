@@ -63,7 +63,7 @@ return estado_general;
 
 // Validar Profesor
  
- $("#registroProfesor").submit(function(){
+ $("#form_registroProf").submit(function(){
     var estado=true;
    
      if( $("#pass1p").val()!=$("#pass2p").val() ){

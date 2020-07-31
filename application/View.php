@@ -93,10 +93,10 @@ public function __construct(Request $peticion)
 
 
       $_layoutParams=array(
-        'ruta_css'=>BASE_URL.'/views/layout/'.DEFAULT_LAYOUT.'/css/',
-          'ruta_img'=>BASE_URL.'/views/layout/'.DEFAULT_LAYOUT.'/img/',
-          'ruta_js'=>BASE_URL.'/views/layout/'.DEFAULT_LAYOUT.'/js/',
-          'ruta_fuente'=>BASE_URL.'/views/layout/'.DEFAULT_LAYOUT.'/fonts/',
+        'ruta_css'=>BASE_URL.'views/layout/'.DEFAULT_LAYOUT.'/css/',
+          'ruta_img'=>BASE_URL.'views/layout/'.DEFAULT_LAYOUT.'/img/',
+          'ruta_js'=>BASE_URL.'views/layout/'.DEFAULT_LAYOUT.'/js/',
+          'ruta_fuente'=>BASE_URL.'views/layout/'.DEFAULT_LAYOUT.'/fonts/',
           'menu'=>$menu,
           'js1'=>$js1
       );
@@ -134,8 +134,8 @@ public function __construct(Request $peticion)
       
      $_layoutParams2 = array(
           'ruta_css' => BASE_URL . 'views/layout/' .'inicio'. '/css/',
-          'ruta_img' => BASE_URL . 'views/layout/' . 'inicio' . '/img/',
-          'ruta_js' => BASE_URL . 'views/layout/' . 'inicio' . '/js/',
+          'ruta_img' => BASE_URL . 'views/layout/' . 'inicio'.'/img/',
+          'ruta_js' => BASE_URL . 'views/layout/' . 'inicio'.'/js/',
           'ruta_public_css' => BASE_URL . 'public/css/',
           'ruta_public_js' => BASE_URL . 'public/js/',
           'ruta_public_img' => BASE_URL . 'public/img/',
@@ -178,10 +178,10 @@ public function renderprofesor($vista)
 
      
    $_layoutParams=array(
-    'ruta_css'=>BASE_URL.'/views/layout/'.DEFAULT_LAYOUT.'/css/',
-      'ruta_img'=>BASE_URL.'/views/layout/'.DEFAULT_LAYOUT.'/img/',
-      'ruta_js'=>BASE_URL.'/views/layout/'.DEFAULT_LAYOUT.'/js/',
-      'ruta_fuente'=>BASE_URL.'/views/layout/'.DEFAULT_LAYOUT.'/fonts/',
+    'ruta_css'=>BASE_URL.'views/layout/'.DEFAULT_LAYOUT.'/css/',
+      'ruta_img'=>BASE_URL.'views/layout/'.DEFAULT_LAYOUT.'/img/',
+      'ruta_js'=>BASE_URL.'views/layout/'.DEFAULT_LAYOUT.'/js/',
+      'ruta_fuente'=>BASE_URL.'views/layout/'.DEFAULT_LAYOUT.'/fonts/',
       'menu'=>$menu,
       'js1'=>$js1
   );

@@ -21,14 +21,15 @@ class inicioModel extends Model{
 
     public function getprof($user, $passprof){
         $profe = $this->_db->query(
-                "select * from profesor " . 
+                "select idprofesor,nombres,apellidos from profesor " . 
                 "where usuario='$user' " .
                 "and pass_prof ='$passprof' " 
                 );
-                if($profe->fetch()){
+                return $profe->fetch();
+               /* if ($profe->fetch()){
                     return true;
                 }
-                  return false ;
+                return false; */
     }
 
     public function EstadoEst($carnet, $pass){
@@ -116,10 +117,10 @@ class inicioModel extends Model{
      }
  
     
-     public function insertarProfesor($profnomb,$profape,$user,$pass,$sexo,$email,$car)
+     public function insertarProfesor($profnomb,$profape,$user,$car,$pass,$email,$sexo)
      {
  
-  $this->_db->prepare("insert into profesor(nombres,apellidos,usuario,pass_prof,sexo,emailProf,carrera,Estado)
+  $this->_db->prepare("insert into profesor(nombres,apellidos,usuario,pass_prof,genero,emailProf,carrera,Estado)
    VALUES (:pname,:ssurname,:use,:pas,:sex,:email,:carr,'1')")
              ->execute(
                  array(

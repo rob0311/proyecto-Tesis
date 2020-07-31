@@ -15,7 +15,8 @@ class studentController extends Controller
         public function index()
         {
             $this->_view->titulo =  'Estudiante';
-           // $this->_view->GetClases= $this->std_model->mostrar_clases();
+            $this->_view->setJs1(array('modal'));
+            $this->_view->GetAsig= $this->std_model->mostrar_asignatura();
             $this->_view->datos_user =$this->std_model->mostrar_usuario();
             $this->_view->anio_escol = $this->std_model->anio_escol();
             $this->_view->renderizar('index');
@@ -30,6 +31,15 @@ class studentController extends Controller
             $this->_view->renderizar('perfil','student');
         }
 
+
+        public function clases() //vista para ver las clases de cada asignatura
+        {
+            $this->_view->titulo = 'Clases';
+           //S $this->_view->GetClases = $this->std_model->mostrar_clases($id_Asignatura);
+           // $this->_view->setJs1(array('modal'));
+            $this->_view->renderizar('clases','student');   
+        }
+
         public function ClaseDia($idclase) //vista para ver las clases del dia
         {
             $this->_view->titulo = 'Clases';
@@ -37,9 +47,8 @@ class studentController extends Controller
             $this->_view->setJs1(array('modal'));
             $this->_view->renderizar('ClaseDia','student');
             
-            
-           
         }
+
         public function tarea() //vista para ver las tareas de la clase del dia
         {
             $this->_view->titulo = 'Tareas';

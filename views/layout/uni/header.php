@@ -17,7 +17,7 @@
   <link href="<?php echo $_layoutParams['ruta_css'];?>bootstrap.css" rel="stylesheet">
 
   <!--external css-->
-  <link href="<?php echo $_layoutParams['ruta_css'];?>/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="<?php echo $_layoutParams['ruta_css'];?>font-awesome/css/font-awesome.css" rel="stylesheet" />
   <!-- Custom styles for this template -->
   <link href="<?php echo $_layoutParams['ruta_css'];?>style.css" rel="stylesheet">
   <link href="<?php echo $_layoutParams['ruta_css'];?>styles.css" rel="stylesheet">
@@ -29,6 +29,7 @@
   
   <!-- Modernizer Script for old Browsers   -->
   <script src="<?php echo $_layoutParams['ruta_js'];?>jquery-3.1.1.min.js"></script>
+ 
 </head>
 <body>                                                                                                                   
   <section id="container">

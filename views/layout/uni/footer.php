@@ -16,19 +16,15 @@
   
   <!-- js placed at the end of the document so the pages load faster -->
   
-    <script src="<?php echo $_layoutParams['ruta_js'];?>modernizr-2.6.2.min.js"></script>
-  <script src="<?php echo $_layoutParams['ruta_js'];?>Chart.js"></script>
+    
+
   <script src="<?php echo $_layoutParams['ruta_js'];?>bootstrap.min.js"></script>
-  <script class="include" type="text/javascript" src="<?php echo $_layoutParams['ruta_js'];?>jquery.dcjqaccordion.2.7.js"></script>
-  <script src="<?php echo $_layoutParams['ruta_js'];?>jquery.scrollTo.min.js"></script>
-  <script src="<?php echo $_layoutParams['ruta_js'];?>jquery.nicescroll.js" type="text/javascript"></script>
-  <script src="<?php echo $_layoutParams['ruta_js'];?>jquery.sparkline.js"></script>
+  
+  
   <!--common script for all pages-->
-  <script src="<?php echo $_layoutParams['ruta_js'];?>common-scripts.js"></script>
+ 
   <script type="text/javascript" src="<?php echo $_layoutParams['ruta_js'];?>jquery.gritter.js"></script>
-  <script type="text/javascript" src="<?php echo $_layoutParams['ruta_js'];?>gritter-conf.js"></script>
   <!--script for this page-->
-  <script src="<?php echo $_layoutParams['ruta_js'];?>sparkline-chart.js"></script>
   <script src="<?php echo $_layoutParams['ruta_js'];?>zabuto_calendar.js"></script>
   <script src="<?php echo $_layoutParams['ruta_js'];?>sweetalert2.min.js"></script>
   

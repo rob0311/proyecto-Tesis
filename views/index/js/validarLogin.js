@@ -1,4 +1,5 @@
 $(document).ready(function(){
+//validacion del login estudiante    
     $("#form_log_est").submit(function(e){
         var est=true;
         e.preventDefault();
@@ -12,7 +13,6 @@ $(document).ready(function(){
             success:(function(data){
         
                 if(data!=0){
-                   
                 $("#Errorlog").html(data).fadeIn(500).fadeOut(7000);
                
                 est= false;
@@ -72,5 +72,16 @@ return est;
 return estado;
         
     })
+//*****************************************************************************************************
+//limpiar formularios del prfesor
+$("#limpprof").click(function(){
+    $('#form_log_prof')[0].reset();
+})
+//limpiar formulario del estudiante
+$("#limpEst").click(function(){
+    $('#form_log_est')[0].reset();
+})
 
-});
+
+});//fin de documet
+

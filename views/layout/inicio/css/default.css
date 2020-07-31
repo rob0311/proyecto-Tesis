@@ -1,0 +1,175 @@
+*::before,
+*::after,
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #353535;
+    width: 100%;
+    height: 100vh;
+}
+
+.presentacion{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 10000;
+}
+
+.presentacion img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.presentacion .fondo-text{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.404);
+    z-index: 10;
+}
+
+.presentacion .contenido{
+    position: relative;
+    z-index: 100;
+}
+
+.presentacion .contenido h1{
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    font-size: 80px; 
+    text-shadow: 3px 5px #858b8e;
+}
+
+.presentacion .contenido p{
+    font-size: 25px;
+    color: rgb(231, 231, 231);
+}
+
+/* ESTILOS LOGIN */
+.login{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    z-index: 200;
+}
+
+.present{
+    background-color: rgb(255, 255, 255);
+}
+
+.present h2{
+    font-size: 33px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    text-shadow: 2px 2px #d1d1d16e;
+}
+
+/* Redes */
+.redes{
+    position: relative;
+}
+
+.redes .fa-facebook, .fa-twitter, .fa-youtube
+{
+    display: block;
+    width: 50px;
+    font-size: 40px;
+}
+
+.fa-facebook{
+    color: rgb(7, 7, 116);
+}
+
+.fa-youtube{
+    color: crimson;
+}
+
+/* estilos a los modales*/
+
+
+#advanced-search-form{
+    margin-top: 10px;
+    background-color: rgb(255, 255, 255);
+    max-width: 800px;
+    margin: 10px auto 10px;
+    padding: 20px;
+    color: #858b8e;
+    box-shadow: 6px 6px 6px rgba(0,0,0,0.2);
+}
+
+#advanced-search-form h2{
+    padding-bottom: 20px;
+    margin: 10px 20px;
+    font-size: 24px;
+}
+
+#advanced-search-form hr{
+    margin-top: 20px;
+    margin-bottom: 54px;
+    margin-left:3px;
+    border: 1px solid #cccccc;
+
+}
+
+#advanced-search-form .form-group{
+    margin-bottom: 20px;
+    margin-left:20px;
+    width: 30%;
+    float:left;
+    text-align: left;
+}
+
+#advanced-search-form .form-control{
+    padding: 12px 20px;
+    height: auto;
+    border-radius: 2px;
+}
+
+#advanced-search-form .radio-inline{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#advanced-search-form .gender{
+    width: 30%;
+    margin-top: 30px;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#advanced-search-form .btn{
+    width: 46%;
+    margin: 20px auto 0;
+    display: block;
+    outline: none;
+}
+
+@media screen and (max-width: 800px){
+    #advanced-search-form .form-group{
+        width: 45%;
+    }
+
+    #advanced-search-form{
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 560px){
+    #advanced-search-form .form-group{
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #advanced-search-form h2{
+        text-align: center;
+    }
+}

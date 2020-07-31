@@ -781,7 +781,8 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 
 .ds {
 	background: #fcfcfc;
-	padding-top: 20px;
+    padding-top: 20px;
+    margin-top: 20px;
 }
 
 .ds h4 {
@@ -828,7 +829,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 }
 
 .ds a {
-	color: #4ECDC4;
+	color:#E7F2F2;
 }
 
 /* MAIN CHART CONFIGURATION */
@@ -1474,7 +1475,7 @@ PANELS CONFIGURATIONS
 /* PROFILE PANELS */
 /* Profile 01*/
 #profile-01 {
-	background: url(http://localhost:8080/sisuni3/public/img/profile-01.jpg) no-repeat center top;
+	background: url(http://localhost:8080/Proyecto-Tesis/public/img/clases.jpg) no-repeat center top;
 	margin-top: -15px;
 	background-attachment: relative;
 	background-position: center center;
@@ -2487,12 +2488,12 @@ ul.labels-info li img {
 .style-head {
     padding: 0.5px;
     padding-left: 10px;
-    background:#67d3fd;
-    color:rgb(251, 252, 250);
+    background:#96dcf8;
+    color: rgb(255, 255, 255);
     border-radius:5 4px 0 0;
     -webkit-border-radius:0 4px 0 0;
     height: 10%;
-
+   
 }
 .inbox-head h3 {
     margin:0;

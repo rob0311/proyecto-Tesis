@@ -9,7 +9,7 @@ class studentModel extends Model{
         parent::__construct();
     }
 //funcion que muestre todas las asignaturas  que recibe el estudiante
-   /* public function mostrar_asignatura()
+    public function mostrar_asignatura()
     {
         $carnt=Session::get("Carnet_Est");
         $datos=$this->_db->query("select A.id_Asignatura, A.nombre, A.credito,R.anio_escolar
@@ -19,10 +19,10 @@ class studentModel extends Model{
           order by R.anio_escolar DESC"
         );
         return $datos->fetchAll();
-    }*/
+    }
 
     //funcion que muestre todas las clases  que recibe el estudiante
-    public function mostrar_clases()
+   /*  public function mostrar_clases()
     {
         $carnt=Session::get("Carnet_Est");
         $datos=$this->_db->query("select C.idclase, C.Nombre,R.anio_escolar,A.nombre
@@ -32,7 +32,7 @@ class studentModel extends Model{
           order by R.anio_escolar DESC"
         );
         return $datos->fetchAll();
-    }
+    }*/
    
     public function mostrar_usuario()
     {
@@ -63,13 +63,24 @@ class studentModel extends Model{
         return $datos->fetchAll();
     }*/
     
-
+//Funcion para mostrar las clases del dia
     public function mostrar_claseDia($idclase)
     {
 
    $datos=$this->_db->query("SELECT * FROM clase_dia where clase_idclase='$idclase'");
         return $datos->fetchAll();
     }
+
+    //Funcion para mostrar las clases segun la asignatura
+   // public function mostrar_clases($id_Asignatura)
+     public function mostrar_clases()
+    
+    {
+
+   $datos=$this->_db->query("SELECT idclase, tema, fecha FROM clase where asignatura_id_Asignatura='prog01'");
+        return $datos->fetchAll();
+    }
+
 
     // asistencia
     public function asistir_clase()
@@ -98,6 +109,6 @@ class studentModel extends Model{
 }
 
 
-}
+}//fin del modelo
 
 ?>;

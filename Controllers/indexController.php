@@ -14,7 +14,6 @@ public function index()
          $this->_view->titulo = 'SACUR';
          $this->_view->setJs(array('validar'));
          $this->_view->setJs(array("validarLogin"));
-         $this->_view->setJs(array("mostrarform"));
          $this->_view->render('index');
 
 
@@ -40,7 +39,7 @@ public function index()
       
     
                 // Registro Profesor
-     if($this->getInt('env_regist_prof')==1){
+     if($this->getInt('enviarProf')==1){
         $this->_view->datos=$_POST;
          
 
@@ -49,10 +48,12 @@ public function index()
                 $this->getsql('nameProf'),
                 $this->getsql('apellidoProf'),
                 $this->getsql('user'), 
-                $this->getsql('pass2'),
-                $this->getsql('genero'),
-                $this->getPostParam('EMAIL'),
-                $this->getsql('carrera')
+                $this->getsql('carrera'),
+                $this->getsql('pass2p'),
+                $this->getPostParam('email_profe'),
+                $this->getsql('genero')
+                
+                
                
                 );
               } 
@@ -133,6 +134,8 @@ public function verificarEmailp()
        if ($dat)  
         {
            echo '0';
+           Session::set("nombre_profesor",$dat['nombres'] . " " . $dat['apellidos']);
+           Session::set("id",$dat['idprofesor']);
         }
       else
        echo 'Usuario y/o Contraseña Incorrecta ';
@@ -144,12 +147,7 @@ public function verificarEmailp()
         $this->redireccionar();
     }
   
-    public function crearcuenta()
-    {
-        $this->_view->titulo='CREAR CUENTA';
-        $this->_view->render('crearcuenta','index');
-    }
-
+   
 }
 
 //fin de la clase indexController

@@ -1,0 +1,92 @@
+   <!-- ventana Modal de asistencia -->
+ <div class="showback">
+              <!-- Modal -->
+              <div class="modal fade " id="registroProfesor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="z-index: 100000">
+                <div class="modal-dialog ">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Crear Cuenta Profesor</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      
+                    </div>
+                    <div class="modal-body">
+
+                      
+   <div class="container" id="advanced-search-form">
+    <div class="container11  text-center ">
+    <h3>
+    <div id="Errorp" class="texcolor"><?php if(isset($this->_error))echo $this->_error; ?></div>
+    <div id="mensaje" class="smscolor"><?php if(isset($this->_mensaje))echo $this->_mensaje; ?></div>
+    </h3>
+   </div>
+ 
+        <h2>Registrate</h2>  
+     <form id="form_registroProf" class="form-Registro" action="" method="post" name="form3" >
+      <input type="hidden" value="1" name="enviarProf" />
+     
+          <div class="form-group">
+                <label for="first-name">Nombres</label>
+                <input type="text" class="form-control" placeholder="Nombres" id="nameProf" name="nameProf" required   autofocus>
+            </div>
+            <div class="form-group">
+                <label for="first-name">Apellidos</label>
+                <input type="text" class="form-control" placeholder="Apellidos" id="apellidoProf" name="apellidoProf" required   autofocus>
+            </div>
+          <div class="form-group">
+                <label for="first-name">Usuario</label>
+                <input type="text" class="form-control" placeholder="Nickname" id="user" name="user" required   autofocus>
+            </div>
+             <div class="form-group">
+                <label for="first-name">carrera</label>
+                <input type="text" class="form-control" placeholder="carrera" id="carrera" name="carrera" required   autofocus>
+            </div>
+            <div class="form-group">
+                <label for="education">contraseña</label>
+                <input type="password" class="form-control" placeholder="contraseña" id="pass1p" name="pass1p" required>
+            </div>
+            <div class="form-group">
+                <label for="education">Repita la contraseña</label>
+                <input type="password" class="form-control" placeholder="contraseña" id="pass2p" name="pass2p" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" placeholder="Email" id="email_profe" name="email_profe" required>
+            </div>
+            <div class="form-group">
+                <label>Genero</label>
+                <div class="form-animate-radio ">
+                    <label class="radio" >
+                        <input type="radio" name="genero" value="M" required />
+                        <span class="outer">
+                            <span class="inner"></span></span>Masculino
+                    </label>
+
+                    <label class="radio" >
+                        <input type="radio" name="genero" value="F" required />
+                        <span class="outer">
+                            <span class="inner"></span></span>Femenino
+                    </label>
+                    </div>         
+           </div>
+          
+
+            <div class="clearfix"></div>
+            <button type="submit" class="btn btn-info btn-lg btn-responsive" id="btn_regist_prof"> <span class="fa fa-check" aria-hidden="true"></span> Registrar</button>
+        </form>
+              
+     
+
+          
+     
+
+
+  </div><!--fin de modal body-->
+            <div class="modal-footer">
+
+                     <button type="button" class="btn btn-info btn-lg btn-responsive" data-dismiss="modal">Cerrar</button>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>

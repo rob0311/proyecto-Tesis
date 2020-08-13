@@ -67,17 +67,15 @@ class studentModel extends Model{
     public function mostrar_claseDia($idclase)
     {
 
-   $datos=$this->_db->query("SELECT * FROM clase_dia where clase_idclase='$idclase'");
+      $datos=$this->_db->query("SELECT * FROM clase where idclase='$idclase'");
         return $datos->fetchAll();
     }
 
     //Funcion para mostrar las clases segun la asignatura
-   // public function mostrar_clases($id_Asignatura)
-     public function mostrar_clases()
-    
+    public function mostrar_clases($id_Asignatura)
     {
 
-   $datos=$this->_db->query("SELECT idclase, tema, fecha FROM clase where asignatura_id_Asignatura='prog01'");
+   $datos=$this->_db->query("SELECT idclase, tema, fecha FROM clase where asignatura_id_Asignatura='$id_Asignatura'");
         return $datos->fetchAll();
     }
 

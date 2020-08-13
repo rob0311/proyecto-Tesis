@@ -32,18 +32,19 @@ class studentController extends Controller
         }
 
 
-        public function clases() //vista para ver las clases de cada asignatura
+        public function clases($id_Asignatura) //vista para ver las clases de cada asignatura
         {
             $this->_view->titulo = 'Clases';
-           //S $this->_view->GetClases = $this->std_model->mostrar_clases($id_Asignatura);
+            $this->_view->GetClases = $this->std_model->mostrar_clases($id_Asignatura);
            // $this->_view->setJs1(array('modal'));
             $this->_view->renderizar('clases','student');   
         }
 
-        public function ClaseDia($idclase) //vista para ver las clases del dia
+       // public function ClaseDia($idclase) //vista para ver las clases del dia
+         public function ClaseDia($idclase)
         {
-            $this->_view->titulo = 'Clases';
-           // $this->_view->GetClaseDia = $this->std_model->mostrar_claseDia($idclase);
+            $this->_view->titulo = 'Temas';
+            $this->_view->GetClaseDia = $this->std_model->mostrar_claseDia($idclase);
             $this->_view->setJs1(array('modal'));
             $this->_view->renderizar('ClaseDia','student');
             

@@ -19,6 +19,12 @@ class profesorController extends Controller
     
     
         }
+
+        public function crearclase()
+        {
+            $this->_view->titulo='Crear Clase';
+            $this->_view->render('clases');
+        }
     
     }
     ?>

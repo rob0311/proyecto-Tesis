@@ -104,12 +104,12 @@
         </li>
 
         <li class="sub-menu">
-            <a href="javascript:;">
+            <a href="profesor/crearclase">
             <i class="fa fa-tasks"></i>
             <span>Clases</span>
             </a>
            <ul class="sub">
-              <li><a href="form_component.html">Agregar Nueva clase</a></li>
+              <li><a href="#">Agregar Nueva clase</a></li>
               <li><a href="advanced_form_components.html">Historial de clases</a></li>
               <li class="sub-menu">
           <a href="javascript:;">

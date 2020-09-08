@@ -1,41 +1,55 @@
-git status <!-- ***********************************************************************************************************************************
+ <!-- ***********************************************************************************************************************************
         Contenido de la vista profesor
  *********************************************************************************************************************************************************** -->
  <!--main content start-->
+ <?php if(isset($_layoutParams['js']) && count($_layoutParams['js']))
+    for($i=0;$i<count($_layoutParams['js']);$i++)
+        echo "<script src='". $_layoutParams['js'][$i]."'></script>";?> 
+  
  <section id="main-content">
-   <section class="wrapper">
-     <div class="row">
-       <div class="col-lg-9 main-chart">
-         <!--CUSTOM CHART START -->
-         <div class="border-head">
-           <h3>Vista del profesor</h3>
-         </div>
-         <ul class="nav nav-tabs" id="myTab" role="tablist">
-           <li class="nav-item" role="presentation">
-             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="false">Clases</a>
-           </li>
-           <li class="nav-item" role="presentation">
-             <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Partcipantes</a>
-           </li>
-           <li class="nav-item" role="presentation">
-             <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Informenes</a>
-           </li>
-         </ul>
-         <div class="tab-content" id="myTabContent">
-           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">.
-            <div class="border-head">
-              <h3>Home</h3>
-            </div> ..
-            </div>
-           <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-           <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-         </div>
-         <!-- /col-lg-3 -->
-       </div>
+    <section class="wrapper">
+        <div class="row">
+          <div class="col-lg-12 ">        
 
-     </div>
-     </div>
-     <!-- /row -->
-   </section>
- </section>
- <!--main content end-->
+        
+    <ul class="nav nav-tabs nav-justified sidebar-menu" role="tablist">
+    <li role="presentation" class="active">
+        <a href="#id-of-content-1" role="tab" data-toggle="tab">
+            Clases
+        </a>
+    </li>
+    <li role="presentation" >
+        <a href="#id-of-content-2" role="tab" data-toggle="tab">
+            Participantes
+        </a>
+    </li>
+    <li role="presentation">
+        <a href="#id-of-content-3" role="tab" data-toggle="tab">
+            Informes
+        </a>
+    </li>
+    <li role="presentation">
+        <a href="#id-of-content-3" role="tab" data-toggle="tab">
+            asignaturas
+        </a>
+    </li>
+</ul>
+
+<div class="tab-content ds">
+    <div role="tabpanel" id="id-of-content-1" class="tab-pane fade active in">
+      
+contenido 1
+</div> <!-- /fin de la pestaña tema -->
+
+<div role="tabpanel" id="id-of-content-2" class="tab-pane fade ">
+        Tab content 2
+    </div>
+    <div role="tabpanel" id="id-of-content-3" class="tab-pane fade">
+        Tab content 3
+    </div>
+</div>
+  
+</div> <!-- fin de col12 --> 
+ </div><!-- /row -->
+  </section> 
+   </section> 

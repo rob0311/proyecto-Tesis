@@ -109,8 +109,8 @@
             <span>Clases</span>
             </a>
            <ul class="sub">
-              <li><a href="form_component.html">Agregar Nueva clase</a></li>
-              <li><a href="advanced_form_components.html">Historial de clases</a></li>
+              <li><a href="form_component.html">Crear Nueva clase</a></li>
+              <li><a href="advanced_form_components.html">Ver Todas las clases</a></li>
               <li class="sub-menu">
           <a href="javascript:;">
              <i class="fa fa-th"></i>

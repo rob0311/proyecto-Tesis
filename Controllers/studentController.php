@@ -40,12 +40,12 @@ class studentController extends Controller
             $this->_view->renderizar('clases','student');   
         }
 
-       // public function ClaseDia($idclase) //vista para ver las clases del dia
+        //vista para ver las clases del dia
          public function ClaseDia($idclase)
         {
             $this->_view->titulo = 'Temas';
             $this->_view->GetClaseDia = $this->std_model->mostrar_claseDia($idclase);
-            $this->_view->setJs1(array('modal'));
+            $this->_view->setJs1(array('funciones'));
             $this->_view->renderizar('ClaseDia','student');
             
         }

@@ -1,23 +1,56 @@
  <?php if(isset($_layoutParams['js1']) && count($_layoutParams['js1']))
     for($i=0;$i<count($_layoutParams['js1']);$i++)
-        echo "<script src='". $_layoutParams['js1'][$i]."'></script>";
-?> 
- 
-  <section id="main-content">
-      <section class="wrapper ">
+        echo "<script src='". $_layoutParams['js1'][$i]."'></script>";?> 
+  
+ <section id="main-content">
+    <section class="wrapper">
+        <div class="row">
+          <div class="col-lg-12 ">        
+
+        
+    <ul class="nav nav-tabs nav-justified sidebar-menu" role="tablist">
+    <li role="presentation" class="active">
+        <a href="#id-of-content-1" role="tab" data-toggle="tab">
+            TEMA
+        </a>
+    </li>
+    <li role="presentation" >
+        <a href="#id-of-content-2" role="tab" data-toggle="tab">
+            ARCHIVOS
+        </a>
+    </li>
+    <li role="presentation">
+        <a href="#id-of-content-3" role="tab" data-toggle="tab">
+            TAREA
+        </a>
+    </li>
+    <li role="presentation">
+        <a href="#id-of-content-3" role="tab" data-toggle="tab">
+            TRABAJOS
+        </a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div role="tabpanel" id="id-of-content-1" class="tab-pane fade active in">
         <?php foreach ($this->GetClaseDia as $GetClaseDia) { ?> 
-        <div class="row mt">
-          <div class="col-lg-10 ">
-          <!-- <div id="resultado_asistencia"> <?php if(isset($this->_error))echo $this->_error; ?> </div>-->
+           <div class="row mt">
+              <div class="col-md-12">
+          <div id="error"> <?php if(isset($this->_error))echo $this->_error; ?> </div>
           
             <!--CUSTOM CHART START -->
-            <div class="style-head" style="font-weight: bold;">
-       <div class="col-lg-8 "><h4><span>codigo:</span> <span id="id_dia"><?=$GetClaseDia['idclase']?></span> </h4> </div>
-          <div class="col-lg-4 "> <h4>Fecha: <?=$GetClaseDia['fecha']?> </h4></div>
-           
-          <h3 class="text-center">Tema: <?=$GetClaseDia['tema']?> </h3>
-         
-        </div>
+            <div class="col-md-12 bg-primary" style="font-weight: bold;">
+       <div class="col-lg-2 "><h4><span>codigo:</span> <span id="id_dia"><?=$GetClaseDia['idclase']?></span> </h4>
+                              <h4>Fecha: <?=$GetClaseDia['fecha']?> </h4>
+         </div>
+
+          <div class="col-lg-8 "> <h3 class="text-center">Tema: <?=$GetClaseDia['tema']?> </h3></div>
+
+        <div class="col-lg-2 "> 
+  <a class="btn btn-success btn-lg" href="<?php echo BASE_URL . 'student/asistencia/'?>"> 
+  <i class="fa fa-check-circle"></i> Marcar Asistencia</a>
+          <!-- <button  type="submit" class="btn btn-success" id="btn_asis">Marcar Asistencia</button>--> </div>
+          </div>
             
   <section class="wrapper">
          <div class="row mt">
@@ -37,98 +70,31 @@
           <!-- /col-md-12 -->
         </div>
         <!-- /row -->
- 
+ </section> 
     
-      </section>
+     
   
     <!-- /fin de contenido -->
 
       
          <?php } ?>   <!-- /row -->
           </div>
-          <!-- /col-lg-9 END SECTION MIDDLE -->
-          <!-- **********************************************************************************************************************************************************
-               Contenido SIDEBAR Derecho 
-              *********************************************************************************************************************************************************** -->
-          <div class="col-lg-2 ds">
-            <!--panel derecho-->
-            <div class="donut-main">
-         <h3> Opciones </h3>
-             <!-- WEATHER PANEL -->
-              <div class="col-md-12"><!-- en el css style.css se carga el fondo  -->
-              <form id="asist" name="asist" action="" method="post" autocomplete="off" class="logInForm" >
-              <label>Codigo de la clase del dia</label>
-           <input required="" class="form-control" id="asistir" name="asistir" type="text" >
-             <button type="submit" class="btn btn-success" id="btn_asis">Asistir</button>
-             </form> 
-             
-           
-             <!-- RECENT ACTIVITIES SECTION -->
-            <h4 class="centered mt">Documentacion</h4>
-            <!-- First opcion -->
-            <a  class="logout" href="<?php echo BASE_URL . 'student/Archivos/' ; ?>">
-            <div class="desc">
-              <div class="thumb">
-                <span class="badge bg-theme"><i class="fa fa-archive"></i></span>
-              </div>
-              <div class="details">
-                <p>
-                 
-                  <br/>
-                  Archivos 
-                </p>
-              </div>
-            </div>
-          </a>
-            <!-- Second opcion -->
-      <a  class="logout" href="<?php echo BASE_URL . 'student/tarea/' ; ?>">
-         <div class="desc">
-            <div class="thumb">
-                <span class="badge bg-theme"><i class="fa fa-book"></i></span>
-              </div>
-        
-              <div class="details">
-                 <p>
-                  <br/>
-                  Tareas
-                </p>
-              </div>
-              </div>
-             </a>
-            <!-- Third opcion -->
-            <a  class="logout" href="<?php echo BASE_URL . 'student/trabajos/' ; ?>">
-          <div class="desc">
-              <div class="thumb">
-                <span class="badge bg-theme"><i class="fa fa-clipboard"></i></span>
-              </div>
-              <div class="details">
-                <p>
-                 
-                  <br/>
-                  trabajos 
-                </p>
-              </div>
-            </div>
-          
-
-               
-          
-            
-                 </div>
-         
-           </div>
-           
-           
           </div>
-          <!-- /col-lg-3 -->
-        </div>
-        <!-- /row -->
-      </section>
+ 
 
-   
-     
-    </section>
-    <!--main content end-->
-   
+</div> <!-- /fin de la pestaña tema -->
 
-    
+
+
+    <div role="tabpanel" id="id-of-content-2" class="tab-pane fade ">
+        Tab content 2
+    </div>
+    <div role="tabpanel" id="id-of-content-3" class="tab-pane fade">
+        Tab content 3
+    </div>
+</div>
+  
+</div> <!-- fin de col12 --> 
+ </div><!-- /row -->
+  </section> 
+   </section> 

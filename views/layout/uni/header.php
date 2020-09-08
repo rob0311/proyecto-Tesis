@@ -39,10 +39,10 @@
            <div class="fa fa-bars tooltips " data-placement="right" data-original-title="Toggle Navigation"></div>
        </div>
       <!--logo start-->
-      <a href="<?php echo BASE_URL.'index';?>" class="logo"><b><span>UNAN LEON </span></b></a>
+      <a href="<?php echo BASE_URL.'index';?>" class="logo hidden-xs"><b><span>UNAN LEON </span></b></a>
       <!--logo end-->
         <!--Notificaciones-->
-     <div class="nav notify-row" id="top_menu">
+     <div class="nav notify-row hidden-xs" id="top_menu">
         <!--  notification start -->
           <ul class="nav top-menu">
           <!-- settings start -->

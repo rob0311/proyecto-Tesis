@@ -2968,7 +2968,7 @@ select[multiple].form-group-lg .form-control {
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 14 px;
   font-weight: normal;
   line-height: 1.42857143;
   text-align: center;
@@ -6564,3 +6564,23 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+.btn-asistencia {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.btn-asistencia:hover,
+.btn-asistencia:focus,
+.btn-asistencia.focus,
+.btn-asistencia:active,
+.btn-asistencia.active,
+.open > .dropdown-toggle.btn-asistencia {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
+}
+.btn-asistencia:active,
+.btn-asistencia.active,
+.open > .dropdown-toggle.btn-asistencia {
+  background-image: none;
+}

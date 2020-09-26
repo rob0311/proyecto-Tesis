@@ -20,11 +20,12 @@ class profesorController extends Controller
     
         }
 
-        public function crearclase()
+        public function clases()
         {
             $this->_view->titulo='Crear Clase';
-            $this->_view->render('clases');
+            $this->_view->renderprofesor('clases','index');
         }
+        
     
     }
     ?>

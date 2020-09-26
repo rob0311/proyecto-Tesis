@@ -19,7 +19,6 @@
     
 
   <script src="<?php echo $_layoutParams['ruta_js'];?>bootstrap.min.js"></script>
-  <script src="<?php echo $_layoutParams['ruta_js'];?>bootstrap.js"></script>
   
   
   <!--common script for all pages-->

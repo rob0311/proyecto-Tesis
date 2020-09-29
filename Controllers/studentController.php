@@ -69,8 +69,11 @@ class studentController extends Controller
            
         }
         public function asistencia(){
-            $respuesta=$this->std_model->asistir_clase();
-           echo $respuesta;
+
+           if($this->std_model->asistir_clase('id_e'))
+             echo "funciona";
+         else
+             echo '0';
            }
         
         

@@ -1,4 +1,4 @@
- <?php if(isset($_layoutParams['js1']) && count($_layoutParams['js1']))
+<?php if(isset($_layoutParams['js1']) && count($_layoutParams['js1']))
     for($i=0;$i<count($_layoutParams['js1']);$i++)
         echo "<script src='". $_layoutParams['js1'][$i]."'></script>";?> 
   
@@ -21,12 +21,12 @@
     </li>
     <li role="presentation">
         <a href="#id-of-content-3" role="tab" data-toggle="tab">
-            TAREA
+            TRABAJOS
         </a>
     </li>
     <li role="presentation">
-        <a href="#id-of-content-3" role="tab" data-toggle="tab">
-            TRABAJOS
+        <a href="#id-of-content-4" role="tab" data-toggle="tab">
+            TAREA
         </a>
     </li>
 </ul>
@@ -36,7 +36,7 @@
         <?php foreach ($this->GetClaseDia as $GetClaseDia) { ?> 
            <div class="row mt">
               <div class="col-md-12">
-          <div id="error"> <?php if(isset($this->_error))echo $this->_error; ?> </div>
+          <div id="resultado_asistencia" class="text-center"></div>
           
             <!--CUSTOM CHART START -->
             <div class="col-md-12 bg-primary" style="font-weight: bold;">
@@ -47,9 +47,11 @@
           <div class="col-lg-8 "> <h3 class="text-center">Tema: <?=$GetClaseDia['tema']?> </h3></div>
 
         <div class="col-lg-2 "> 
-  <a class="btn btn-success btn-lg" href="<?php echo BASE_URL . 'student/asistencia/'?>"> 
+  <a id="btn_asitencia" class="btn btn-success btn-lg" href="<?php echo BASE_URL . 'student/asistencia/'?>"> 
   <i class="fa fa-check-circle"></i> Marcar Asistencia</a>
-          <!-- <button  type="submit" class="btn btn-success" id="btn_asis">Marcar Asistencia</button>--> </div>
+   <a id="btn_asitencia2" class="btn btn-success btn-lg" href="<?php echo BASE_URL . 'student/asistencia/'?>"> 
+  <i class="fa fa-check-circle"></i> prueba</a>
+            </div>
           </div>
             
   <section class="wrapper">
@@ -78,7 +80,8 @@
 
       
          <?php } ?>   <!-- /row -->
-          </div>
+          </div
+          >
           </div>
  
 
@@ -86,12 +89,126 @@
 
 
 
-    <div role="tabpanel" id="id-of-content-2" class="tab-pane fade ">
-        Tab content 2
-    </div>
+    <div role="tabpanel" id="id-of-content-2" class="tab-pane fade "><!-- /pestaña archivos -->
+       <div class="grey-style">
+               <label><i class="fa fa-archive"></i> Mis Archivos  </label>         
+        </div>
+      <div class="content-panel">
+        <table class="table table-responsive table-hover ">
+    <thead>
+        <tr>
+            <th>Archivo</th>
+            <th>Descripcion</th>
+            <th>Tamaño</th>
+            <th>Subido el</th>
+            <th>Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>10 mb</td>
+            <td>fecha</td>
+            <td> 
+     <a href="#" class="btn btn-secondary"><i class="fa fa-download"></i> Descargar</a></td>
+        </tr>
+       
+    </tbody>
+</table>
+</div>
+    </div><!-- /fin de la pestaña archivos-->
     <div role="tabpanel" id="id-of-content-3" class="tab-pane fade">
-        Tab content 3
-    </div>
+               <div class="grey-style">
+               <label><i class="fa fa-pencil"></i> Mis Trabajos  </label>         
+        </div>
+      <div class="content-panel">
+        <table class="table table-responsive table-hover ">
+    <thead>
+        <tr>
+            <th>Trabajos</th>
+            <th>Descripcion</th>
+            <th>Fecha de entrega</th>
+            <th>Puntos</th>
+            <th>Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>tarea1</td>
+            <td>Doe</td>
+            <td>fecha</td>
+            <td>20</td>
+            <td> 
+     <a href="#" class="btn btn-secondary"><i class="fa fa-download"></i> Descargar</a></td>
+        </tr>
+       
+    </tbody>
+</table>
+</div>
+    </div><!--/fin  de la pestaña trabajos-->
+
+     <div role="tabpanel" id="id-of-content-4" class="tab-pane fade">
+               <div class="grey-style">
+               <label><i class="fa fa-book"></i> Mis Tareas  </label>         
+        </div>
+      <div class="content-panel">
+        <table class="table table-responsive table-hover ">
+    <thead>
+        <tr>
+            <th>Tarea</th>
+            <th>Descripcion</th>
+            <th>Fecha de entrega</th>
+            <th>Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>tarea1</td>
+            <td>Doe</td>
+            <td>fecha</td>
+            <td> 
+     <a href="#dialogo1" data-toggle="modal" class="btn btn-info"><i class="fa fa-plus"></i> Mas informacion</a></td>
+        </tr>
+       
+    </tbody>
+</table>
+
+<div class="modal fade" id="dialogo1" style="z-index: 100000">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+    
+          <!-- cabecera del diálogo -->
+          <div class="modal-header">
+            <h3 class="modal-title">Detalles de Tarea</h3>
+            <button type="button" class="close" data-dismiss="modal">X</button>
+          </div>
+    
+          <!-- cuerpo del diálogo -->
+          <div class="modal-body">
+            <div class="single_courses">
+                        <h3 class="grey-style">Contenido</h3>
+                        <font size=4><p>Our set he for firmament morning sixth subdue darkness creeping gathered divide our let god moving. Moving in fourth air night bring upon you’re it beast let you dominion likeness open place day great wherein heaven sixth lesser subdue fowl male signs his day face waters itself and make be to our itself living. Fish in thing lights moveth. Over god spirit morning, greater had man years green multiply creature, form them in, likeness him behold two cattle for divided. Fourth darkness had. Living light there place moved divide under earth. Light face, fly dry us </p></font>
+                    <h3 class="second_title grey-style">FECHA DE ENTREGA:</h3>
+                      <h4>21/09/2020</h4>
+                    <h3 class="second_title grey-style">PUNTAJE:</h3> 
+                       <h4>20 pts</h4>
+                    <h3 class="second_title grey-style">Archivo:</h3>
+
+                    </div>
+          </div>
+    
+          <!-- pie del diálogo -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          </div>
+    
+        </div>
+      </div>
+    </div> <!--/fin del modal--> 
+</div>
+</div>
+    </div><!--/fin  de la pestaña tarea--> 
 </div>
   
 </div> <!-- fin de col12 --> 

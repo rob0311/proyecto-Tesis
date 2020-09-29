@@ -81,29 +81,29 @@ class studentModel extends Model{
 
 
     // asistencia
-    public function asistir_clase()
+    public function asistir_clase($id_e)
     {
       $carnt_user=Session::get("Carnet_Est"); //capturar el id del estudiante
       $fecha=date("Y-m-d"); //capturar la fecha actual
-      $id_dia=("class02");
-   $estado=$this->_db->query(" SELECT * FROM `asistencia` WHERE estudiante_carnet='$carnt_user' AND clase_idclase='$id_dia' AND fecha='$fecha' ");
+     $class=("class01");
+   $estado=$this->_db->query(" SELECT * FROM asistencia WHERE estudiante_carnet='$carnt_user' AND clase_idclase='$class' AND fecha='$fecha' ");
   
    if(!$estado->fetch()) {
 
      $this->_db->prepare("insert into asistencia(clase_idclase,estudiante_carnet,fecha)
-                       VALUES(:idDia:,:carnEst,:fecha) ")
+                       VALUES(:idDia,:carnEst,:fecha)")
                                   ->execute(
                                     array(
-                               'idDia' => " class01",
-                               'carnEst' => "1234",
-                               'fecha' => "5/9/2020"
+                               'idDia' => $class,
+                               'carnEst' => $carnt_user ,
+                               'fecha' => $fecha 
                                         )
                                     );
-                      return "Bienvenido a Clases";
+                      return true;
               
      }
      else
-            return "Ya marco Asistencia";
+            return false;
 }
 
 

@@ -17,8 +17,11 @@ CREATE TABLE IF NOT EXISTS `sacur`.`asignatura` (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sacur`.`archivo` (
   `id_archivo` INT NOT NULL AUTO_INCREMENT,
-  `Documentos` LONGBLOB NULL,
-  PRIMARY KEY (`id_archivo`));
+  `Documentos` BLOB NULL,
+  `descripcion` VARCHAR(100) NULL,
+  `tamanio` FLOAT  NULL,
+  `fecha` DATE NULL,
+ PRIMARY KEY (`id_archivo`));
 
 
 -- -----------------------------------------------------

@@ -1,4 +1,4 @@
-
+  
 CREATE SCHEMA IF NOT EXISTS `sacur` DEFAULT CHARACTER SET latin1 ;
 USE `sacur` ;
 
@@ -13,45 +13,6 @@ CREATE TABLE IF NOT EXISTS `sacur`.`asignatura` (
 
 
 -- -----------------------------------------------------
--- Table `sacur`.`archivo`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sacur`.`archivo` (
-  `id_archivo` INT NOT NULL AUTO_INCREMENT,
-  `Documentos` BLOB NULL,
-  `descripcion` VARCHAR(100) NULL,
-  `tamanio` FLOAT  NULL,
-  `fecha` DATE NULL,
- PRIMARY KEY (`id_archivo`));
-
-
--- -----------------------------------------------------
--- Table `sacur`.`preguntas`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sacur`.`preguntas` (
-  `idPreguntas` INT NOT NULL AUTO_INCREMENT,
-  `repuesta` VARCHAR(250) NOT NULL,
-  `puntos` INT NOT NULL,
-  `fecha` DATE NOT NULL,
-  `pregunta` VARCHAR(200) NOT NULL,
-  `activada` TINYINT NULL DEFAULT NULL,
-  PRIMARY KEY (`idPreguntas`));
-
-
--- -----------------------------------------------------
--- Table `sacur`.`asignar_tarea`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `sacur`.`asignar_tarea` (
-  `id_tarea` INT NOT NULL AUTO_INCREMENT,
-  `deacrpcion_tarea` VARCHAR(50) NOT NULL,
-  `contenido_tarea` VARCHAR(50) NOT NULL,
-  `fecha_entrega` DATE NULL DEFAULT NULL,
-  `puntaje` INT NULL DEFAULT NULL,
-  `archivo` BLOB NULL DEFAULT NULL,
-  `id_profesor` INT NOT NULL,
-  PRIMARY KEY (`id_tarea`));
-
-
--- -----------------------------------------------------
 -- Table `sacur`.`clase`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sacur`.`clase` (
@@ -60,33 +21,14 @@ CREATE TABLE IF NOT EXISTS `sacur`.`clase` (
   `tema` VARCHAR(80) NOT NULL,
   `contenido` TEXT NULL,
   `asignatura_id_Asignatura` VARCHAR(50) NOT NULL,
-  `archivo_id_archivo` INT DEFAULT NULL,
-  `preguntas_idPreguntas` INT DEFAULT NULL,
-  `asignar_tarea_id_tarea` INT DEFAULT NULL,
   PRIMARY KEY (`idclase`),
   INDEX `fk_clase_asignatura1_idx` (`asignatura_id_Asignatura` ASC),
-  INDEX `fk_clase_archivo1_idx` (`archivo_id_archivo` ASC),
-  INDEX `fk_clase_preguntas1_idx` (`preguntas_idPreguntas` ASC),
-  INDEX `fk_clase_asignar_tarea1_idx` (`asignar_tarea_id_tarea` ASC),
 CONSTRAINT `fk_clase_asignatura1_idx`
     FOREIGN KEY (`asignatura_id_Asignatura`)
     REFERENCES `sacur`.`asignatura` (`id_Asignatura`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-CONSTRAINT `fk_clase_archivo1`
-    FOREIGN KEY (`archivo_id_archivo`)
-    REFERENCES `sacur`.`archivo` (`id_archivo`)
-    ON DELETE NO ACTION,
-CONSTRAINT `fk_clase_preguntas1`
-    FOREIGN KEY (`preguntas_idPreguntas`)
-    REFERENCES `sacur`.`preguntas` (`idPreguntas`)
-    ON DELETE NO ACTION,
-CONSTRAINT `fk_clase_asignar_tarea1`
-    FOREIGN KEY (`asignar_tarea_id_tarea`)
-    REFERENCES `sacur`.`asignar_tarea` (`id_tarea`)
-    ON DELETE NO ACTION            
+    ON UPDATE NO ACTION
 );
-
 
 -- -----------------------------------------------------
 -- Table `sacur`.`estudiante`
@@ -105,6 +47,68 @@ CREATE TABLE IF NOT EXISTS `sacur`.`estudiante` (
   `FechaNac` DATE NOT NULL,
   `Estado` INT NOT NULL,
   PRIMARY KEY (`carnet`));
+
+-- -----------------------------------------------------
+-- Table `sacur`.`archivo`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `sacur`.`archivo` (
+  `id_archivo` INT NOT NULL AUTO_INCREMENT,
+  `archivo_nombre` varchar(255) NOT NULL,
+  `descripcion` VARCHAR(255) NULL,
+  `ruta` varchar(255) NOT NULL,
+  `fk_clase` VARCHAR(20) NOT NULL,
+  PRIMARY KEY (`id_archivo`),
+  INDEX `fk_archivo_clase1_idx` (`fk_clase` ASC),
+CONSTRAINT `fk_archivo_clase1`
+    FOREIGN KEY (`fk_clase`)
+    REFERENCES `sacur`.`clase` (`idclase`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+
+  );
+
+
+-- -----------------------------------------------------
+-- Table `sacur`.`preguntas`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `sacur`.`preguntas` (
+  `idPreguntas` INT NOT NULL AUTO_INCREMENT,
+  `repuesta` VARCHAR(250) NOT NULL,
+  `puntos` INT NOT NULL,
+  `fecha` DATE NOT NULL,
+  `pregunta` VARCHAR(200) NOT NULL,
+  `activada` TINYINT NULL DEFAULT NULL,
+  `fk_clase` VARCHAR(20) NOT NULL,
+  PRIMARY KEY (`idPreguntas`),
+  INDEX `fk_preguntas_clase1_idx` (`fk_clase` ASC),
+CONSTRAINT `fk_preguntas_clase1`
+    FOREIGN KEY (`fk_clase`)
+    REFERENCES `sacur`.`clase` (`idclase`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+);
+
+
+-- -----------------------------------------------------
+-- Table `sacur`.`asignar_tarea`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `sacur`.`asignar_tarea` (
+  `id_tarea` INT NOT NULL AUTO_INCREMENT,
+  `deacrpcion_tarea` VARCHAR(50) NOT NULL,
+  `contenido_tarea` VARCHAR(50) NOT NULL,
+  `fecha_entrega` DATE NULL DEFAULT NULL,
+  `puntaje` INT NULL DEFAULT NULL,
+  `archivo` BLOB NULL DEFAULT NULL,
+  `id_profesor` INT NOT NULL,
+   `fk_clase` VARCHAR(20) NOT NULL,
+  PRIMARY KEY (`id_tarea`),
+  INDEX `fk_asignar_tarea_clase1_idx` (`fk_clase` ASC),
+CONSTRAINT `fk_asignar_tarea_clase1`
+    FOREIGN KEY (`fk_clase`)
+    REFERENCES `sacur`.`clase` (`idclase`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+  );
 
 
 -- -----------------------------------------------------

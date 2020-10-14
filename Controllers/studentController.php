@@ -45,29 +45,12 @@ class studentController extends Controller
         {
             $this->_view->titulo = 'Temas';
             $this->_view->GetClaseDia = $this->std_model->mostrar_claseDia($idclase);
+            $this->_view->GetArchivo = $this->std_model->Archivos($idclase);
             $this->_view->setJs1(array('funciones'));
             $this->_view->renderizar('ClaseDia','student');
             
         }
 
-        public function tarea() //vista para ver las tareas de la clase del dia
-        {
-            $this->_view->titulo = 'Tareas';
-            $this->_view->renderizar('tarea','student');
-           
-        }
-        public function trabajos() //vista para ver los trabajos  de la clase del dia
-        {
-            $this->_view->titulo = 'Trabajos';
-            $this->_view->renderizar('trabajos','student');
-           
-        }
-        public function Archivos() //vista para ver los archivos de la clase del dia
-        {
-            $this->_view->titulo = 'Archivos';
-            $this->_view->renderizar('Archivos','student');
-           
-        }
         public function asistencia(){
 
            if($this->std_model->asistir_clase('id_e'))
@@ -75,12 +58,40 @@ class studentController extends Controller
          else
              echo '0';
            }
-        
-        
+    // descargar archivos del servidor
+     public function descargar_archivoss(){
+        $filename='1.jpg';
+     $url = "../documentos/archivos/";
+  $fullurl=$url.$filename;
+    header("Content-type: image/jpeg");
+    header("Content-Disposition: attachment; filename='$filename'");
+    
+    readfile($fullurl);
 
-       
 
-        
+           }
+
+    public function descargar_archivo(){
+       //  $file_example = '../documentos/archivos/example.csv';
+ $fileName = basename('example.csv');
+$filePath = 'documentos/archivos/'.$fileName;
+if(!empty($fileName) && file_exists($filePath)){
+    // Define headers
+    header("Cache-Control: public");
+    header("Content-Description: File Transfer");
+    header("Content-Disposition: attachment; filename=$fileName");
+    header("Content-Type: text/csv");
+    header("Content-Transfer-Encoding: binary");
+    
+    // Read the file
+    readfile($filePath);
+    exit;
+}else{
+    echo 'Archivo no encontrado.';
 }
 
-    ?>
+           }
+
+   
+
+    }?>

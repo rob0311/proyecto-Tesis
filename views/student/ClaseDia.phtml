@@ -80,8 +80,7 @@
 
       
          <?php } ?>   <!-- /row -->
-          </div
-          >
+          </div>
           </div>
  
 
@@ -93,35 +92,49 @@
        <div class="grey-style">
                <label><i class="fa fa-archive"></i> Mis Archivos  </label>         
         </div>
-      <div class="content-panel">
-        <table class="table table-responsive table-hover ">
+  <?php if (isset($this->GetArchivo) && count($this->GetArchivo)):?>    
+      <div class="panel panel-primary">
+          
+      <table class="table">
     <thead>
         <tr>
-            <th>Archivo</th>
-            <th>Descripcion</th>
-            <th>Tamaño</th>
-            <th>Subido el</th>
-            <th>Accion</th>
+            <th width="5%">#</th>
+            <th width="30%">Nombre del Archivo</th>
+            <th width="40%">Descripcion</th>
+            <th width="10%">Accion</th>
         </tr>
     </thead>
     <tbody>
+
+    <?php for ($i =0; $i < count($this->GetArchivo);$i++): ?> 
         <tr>
-            <td>John</td>
-            <td>Doe</td>
-            <td>10 mb</td>
-            <td>fecha</td>
+            <td><?php echo $this->GetArchivo[$i]['id_archivo']?></td>
+            <td><?php echo $this->GetArchivo[$i]['archivo_nombre']?></td>
+            <td><?php echo $this->GetArchivo[$i]['descripcion']?></td>
             <td> 
-<<<<<<< HEAD
-     <a href="#" class="btn btn-secondary"><i class="fa fa-download"></i> Descargar</a></td>
-=======
-     <a href="#" class="btn btn-default"><i class="fa fa-download"></i> Descargar</a></td>
->>>>>>> 687672f57209374a66cf0803e00e4b6bd5aaa432
+             
+<a href="<?php echo BASE_URL . 'student/descargar_archivo/'?>" class="btn btn-secondary"><i class="fa fa-download"></i> Descargar</a> 
+</td>
         </tr>
-       
+       <?php endfor;?> 
     </tbody>
+     
 </table>
-</div>
+
+
+ </div>
+ <?php else: ?>
+                       <div class="col-md-6 col-md-offset-3">
+                        <p class="alert alert-warning"> <i class="
+                        fa fa-exclamation-triangle"></i> No se encontraron archivos en la carpeta actual</p>
+                       </div>
+
+    <?php endif; ?>  
+
+
+
     </div><!-- /fin de la pestaña archivos-->
+
     <div role="tabpanel" id="id-of-content-3" class="tab-pane fade">
                <div class="grey-style">
                <label><i class="fa fa-pencil"></i> Mis Trabajos  </label>         
@@ -144,11 +157,8 @@
             <td>fecha</td>
             <td>20</td>
             <td> 
-<<<<<<< HEAD
+
      <a href="#" class="btn btn-secondary"><i class="fa fa-download"></i> Descargar</a></td>
-=======
-     <a href="#" class="btn btn-default"><i class="fa fa-download"></i> Descargar</a></td>
->>>>>>> 687672f57209374a66cf0803e00e4b6bd5aaa432
         </tr>
        
     </tbody>
@@ -176,11 +186,9 @@
             <td>Doe</td>
             <td>fecha</td>
             <td> 
-<<<<<<< HEAD
+
      <a href="#dialogo1" data-toggle="modal" class="btn btn-info"><i class="fa fa-plus"></i> Mas informacion</a></td>
-=======
-     <a href="#dialogo1" data-toggle="modal" class="btn btn-default"><i class="fa fa-plus"></i> Mas informacion</a></td>
->>>>>>> 687672f57209374a66cf0803e00e4b6bd5aaa432
+    
         </tr>
        
     </tbody>
@@ -199,7 +207,7 @@
           <!-- cuerpo del diálogo -->
           <div class="modal-body">
             <div class="single_courses">
-<<<<<<< HEAD
+
                         <h3 class="grey-style">Contenido</h3>
                         <font size=4><p>Our set he for firmament morning sixth subdue darkness creeping gathered divide our let god moving. Moving in fourth air night bring upon you’re it beast let you dominion likeness open place day great wherein heaven sixth lesser subdue fowl male signs his day face waters itself and make be to our itself living. Fish in thing lights moveth. Over god spirit morning, greater had man years green multiply creature, form them in, likeness him behold two cattle for divided. Fourth darkness had. Living light there place moved divide under earth. Light face, fly dry us </p></font>
                     <h3 class="second_title grey-style">FECHA DE ENTREGA:</h3>
@@ -207,11 +215,7 @@
                     <h3 class="second_title grey-style">PUNTAJE:</h3> 
                        <h4>20 pts</h4>
                     <h3 class="second_title grey-style">Archivo:</h3>
-=======
-                        <h3>Contenido</h3>
-                        <font size=4><p>Our set he for firmament morning sixth subdue darkness creeping gathered divide our let god moving. Moving in fourth air night bring upon you’re it beast let you dominion likeness open place day great wherein heaven sixth lesser subdue fowl male signs his day face waters itself and make be to our itself living. Fish in thing lights moveth. Over god spirit morning, greater had man years green multiply creature, form them in, likeness him behold two cattle for divided. Fourth darkness had. Living light there place moved divide under earth. Light face, fly dry us </p></font>
-                    <h3 class="second_title">FECHA DE ENTREGA</h3>
->>>>>>> 687672f57209374a66cf0803e00e4b6bd5aaa432
+
 
                     </div>
           </div>
@@ -225,8 +229,7 @@
       </div>
     </div> <!--/fin del modal--> 
 </div>
-</div>
-    </div><!--/fin  de la pestaña tarea--> 
+</div><!--/fin  de la pestaña tarea--> 
 </div>
   
 </div> <!-- fin de col12 --> 

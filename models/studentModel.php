@@ -107,6 +107,15 @@ class studentModel extends Model{
 }
 
 
-}//fin del modelo
+//Mostrar Archivos
+public   function Archivos($idclase)
+{
+  $datos=$this->_db->query("SELECT a.id_archivo,a.archivo_nombre,a.descripcion,a.ruta FROM archivo as a INNER JOIN  clase as c on(a.fk_clase=c.idclase) WHERE a.fk_clase='$idclase' ");
+  return $datos->fetchAll();
+}
 
+
+
+
+}//fin del modelo
 ?>;

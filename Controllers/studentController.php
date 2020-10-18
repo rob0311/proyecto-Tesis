@@ -59,28 +59,15 @@ class studentController extends Controller
              echo '0';
            }
     // descargar archivos del servidor
-     public function descargar_archivoss(){
-        $filename='1.jpg';
-     $url = "../documentos/archivos/";
-  $fullurl=$url.$filename;
-    header("Content-type: image/jpeg");
-    header("Content-Disposition: attachment; filename='$filename'");
-    
-    readfile($fullurl);
-
-
-           }
-
     public function descargar_archivo(){
-       //  $file_example = '../documentos/archivos/example.csv';
- $fileName = basename('example.csv');
+$fileName = basename('ejercicios.pdf');
 $filePath = 'documentos/archivos/'.$fileName;
 if(!empty($fileName) && file_exists($filePath)){
     // Define headers
     header("Cache-Control: public");
     header("Content-Description: File Transfer");
     header("Content-Disposition: attachment; filename=$fileName");
-    header("Content-Type: text/csv");
+    header("Content-Type: application/pdf");
     header("Content-Transfer-Encoding: binary");
     
     // Read the file

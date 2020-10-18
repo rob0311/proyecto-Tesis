@@ -35,7 +35,7 @@ public function index()
                     $this->getsql('pass2'),
                     $this->getsql('fnac') 
                     );
-              } //fin del if enviarRegisEst
+                    } //fin del if enviarRegisEst
       
     
                 // Registro Profesor

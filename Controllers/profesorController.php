@@ -26,15 +26,38 @@ class profesorController extends Controller
             $this->_view->titulo='Crear Clase';
             $this->_view->renderprofesor('clases','index');
         
+        // crear clases
             if($this->getInt('crear_clase')==1)
             {
                 $this->_view->datos=$_POST;
-                $crear=$this->_profesor->newclass(
-                    $this->getsql('nombre_clase'),
+                $this->_profesor->newclass( 
+                    $this->getsql('id_clase'),
                     $this->getsql('fecha_clase'),
-                    $this->getsql('contenido_clase')
+                    $this->getsql('nombre_clase'),
+                    $this->getTexto('contenido_clase'),
+                    $this->getsql('clase_asignatura')       
+                   
                 );
-                echo $crear;
+                 echo '<script>
+                       swal({
+                        type: "success",
+                        title: "¡La clase  ha sido creada correctamente!",
+                        showConfirmButton: true,
+                        confirmButtonText: "Cerrar"
+
+                    }).then(function(result){
+
+                        if(result.value){
+                        
+                            window.location = "clases";
+
+                        }
+
+                    });
+                  </script>';
+
+
+               
 
             }
 

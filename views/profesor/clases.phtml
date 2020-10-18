@@ -4,20 +4,28 @@
     <div class="col-lg-12">
 
     <h3>Hola Profesor, Crea tú clase</h3>
- <form id="form_CrearClase">
-   <input type="hidden" value="1" name="crear_clase">
+ <form id="form_CrearClase" action="" method="post" name="formclass">
+   <input type="hidden" value="1" name="crear_clase" />
   <div class="form-row">
+     <div class="form-group col-md-6">
+      <label for="idclass">Codigo de clase</label>
+      <input type="text" class="form-control" id="id_clase" name="id_clase" placeholder="Codigo de la Clase">
+    </div>
     <div class="form-group col-md-6">
       <label for="tema">Nombre</label>
-      <input type="text" class="form-control" id="nombre_clase" placeholder="Nombre de la Clase">
+      <input type="text" class="form-control" id="nombre_clase" name="nombre_clase" placeholder="Nombre de la Clase">
+    </div>
+     <div class="form-group col-md-6">
+      <label for="Asignatura">Asignatura</label>
+      <input type="text" class="form-control" id="clase_asignatura" name="clase_asignatura" placeholder="Asignar Asignatura">
     </div>
     <div class="form-group col-md-6">
     <label for="fecha_clase">Fecha de Creación</label>
-    <input type="date" class="form-control" id="fecha_clase">
+    <input type="date" class="form-control" id="fecha_clase" name="fecha_clase">
   </div>
     <div class="form-group">
       <label for="contenido_clase">Contenido</label>
-      <textarea name="" id="contenido_clase" class="form-control" cols="30" rows="10" placeholder="Contenido de la clase"></textarea>
+      <textarea  id="contenido_clase" name="contenido_clase" class="form-control" cols="30" rows="10" placeholder="Contenido de la clase" form="form_CrearClase"></textarea>
    
     </div>
   </div>

@@ -132,10 +132,6 @@ class inicioModel extends Model{
                      'sex' => $sexo,
                      'email' => $email,
                      'carr' => $car,
-                    
-
-                    
-                     
                  )
              );
       }   

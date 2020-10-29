@@ -63,7 +63,7 @@
     </div>
    <div class="top-menu" id="menu">
        <ul class="nav pull-right top-menu">
-         <li><a class="logout" href="<?php echo BASE_URL . 'index/cerrar/' ; ?>"> Cerrar seccion</a></li>
+         <li><a class="logout" href="<?php echo BASE_URL . 'index/cerrar/' ; ?>"> Cerrar sesión</a></li>
          <li><p class="centered"><a href="<?php echo BASE_URL . 'profesor/perfil/' ;?>">
           <img src="<?php echo $_layoutParams['ruta_img'];?>user.png" class="img-circle" width="50"></a>
           </p>

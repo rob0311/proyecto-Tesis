@@ -17,6 +17,7 @@ class profesorController extends Controller
         {
             $this->_view->titulo = 'Profesor';
             $this->_view->renderprofesor('index');
+            $this->_view->Get_Clases = $this->_profesor->obtener_clases();
     
     
         }
@@ -25,13 +26,13 @@ class profesorController extends Controller
         {
             $this->_view->titulo='Crear Clase';
             $this->_view->renderprofesor('clases','index');
+            $this->_view->Get_Asignaturas = $this->_profesor->obtener_asignatura();
         
         // crear clases
             if($this->getInt('crear_clase')==1)
             {
                 $this->_view->datos=$_POST;
                 $this->_profesor->newclass( 
-                    $this->getsql('id_clase'),
                     $this->getsql('fecha_clase'),
                     $this->getsql('nombre_clase'),
                     $this->getTexto('contenido_clase'),
@@ -56,12 +57,10 @@ class profesorController extends Controller
                     });
                   </script>';
 
-
-               
-
             }
 
         }
+        
         
     
     }

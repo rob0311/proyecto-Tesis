@@ -30,16 +30,45 @@
     </li>
     <li role="presentation">
         <a href="#id-of-content-3" role="tab" data-toggle="tab">
-            asignaturas
+            Asignaturas
         </a>
     </li>
 </ul>
 
+<!-- INICIO DE LA PESTAÑA CLASES -->
 <div class="tab-content ds">
     <div role="tabpanel" id="id-of-content-1" class="tab-pane fade active in">
 
 <a href="<?php echo BASE_URL.'profesor/clases'?>"><button type="submit" class="btn btn-primary">Nueva Clase</button></a>
-</div> <!-- /fin de la pestaña tema -->
+
+<!-- TABLA DE LAS CLASES -->
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre de la Clase</th>
+      <th scope="col">Asignatura</th>
+      <th scope="col">Fecha de Cración</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <?php 
+        foreach($this->Get_Clases as $Clases){   
+    ?>
+      <th scope="row"><?=$Clases['idclase']?></th>
+      <td><?=$Clases['tema']?></td>
+      <td><?=$Clases['asignatura_id_Asignatura']?></td>
+      <td><?=$Clases['fecha']?></td>
+    </tr>
+    <tr>
+        <?php }?>
+  </tbody>
+</table>
+
+<!-- FIN DE LA TABLA -->
+</div> 
+<!-- /FIN DE LA PESTAÑA CLASES -->
 
 <div role="tabpanel" id="id-of-content-2" class="tab-panel fade ">
         Tab content 2

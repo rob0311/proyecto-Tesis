@@ -7,13 +7,13 @@
             parent::__construct();
         }
 
-        public function newclass($idc,$fecha,$tema,$cont,$asig){
+        public function newclass($fecha,$tema,$cont,$asig){
             
-            $this->_db->prepare("insert into clase(idclase,fecha,tema,contenido,asignatura_id_Asignatura)
-            VALUES (:id,:fech,:tem,:content,:asig)")
+            $this->_db->prepare("INSERT INTO clase(fecha,tema,contenido,asignatura_id_Asignatura)
+            VALUES (:fech,:tem,:content,:asig)")
             ->execute(
                 array(
-                    'id'=> $idc,
+                    
                     'fech'=> $fecha,
                     'tem' => $tema,
                     'content' => $cont,
@@ -21,6 +21,20 @@
                 )
             );
           //      return "se creo la clase";
+          
+        }
+
+        public function obtener_asignatura()
+        {
+            $asignaturas = $this->_db->query("SELECT * FROM `asignatura`");
+
+            return $asignaturas->fetchAll();
+        }
+
+        public function obtener_clases()
+        {
+            $clases = $this->_db->query("SELECT * FROM clase");
+            return $clases->fetchAll();
         }
 
     }

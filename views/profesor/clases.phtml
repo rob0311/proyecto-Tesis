@@ -7,11 +7,11 @@
  <form id="form_CrearClase" action="" method="post" name="formclass">
    <input type="hidden" value="1" name="crear_clase" />
   <div class="form-row">
-    <!-- ESTO YA NO VA 
+    
      <div class="form-group col-md-6">
       <label for="idclass">Codigo de clase</label>
-      <input type="text" class="form-control" id="id_clase" name="id_clase" placeholder="Codigo de la Clase">
-    </div> -->
+      <input type="text" class="form-control" id="id_clase" name="id_clase" placeholder="Código de Clase">
+    </div>
     <div class="form-group col-md-6">
       <label for="tema">Nombre</label>
       <input type="text" class="form-control" id="nombre_clase" name="nombre_clase" placeholder="Nombre de la Clase">
@@ -23,7 +23,7 @@
         <?php 
           foreach($this->Get_Asignaturas as $Asignatura){
           ?>
-          <option value=""><?=$Asignatura['nombre']?></option>
+          <option value=""><?=$Asignatura['id_Asignatura']?></option>
         <?php } ?>
       </select>
     </div>

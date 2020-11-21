@@ -43,7 +43,7 @@ class profesorController extends Controller
 
                     }).then(function(result){
 
-                        if(result.value){
+                        if(result.value=true){
                           window.location("index");
 
                         }
@@ -110,8 +110,8 @@ class profesorController extends Controller
 
                     }).then(function(result){
 
-                        if(result.value){
-                          window.location.replace("profesor");
+                        if(result.value = true){
+                          window.location.replace("index");
 
                         }
 
@@ -139,8 +139,7 @@ class profesorController extends Controller
 
                     });
                   </script>';
-
-
+                  
 
             }
 

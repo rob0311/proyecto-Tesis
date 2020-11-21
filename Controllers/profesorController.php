@@ -44,7 +44,7 @@ class profesorController extends Controller
                     }).then(function(result){
 
                         if(result.value=true){
-                          window.location("index");
+                          window.location.reload("index");
 
                         }
 
@@ -66,6 +66,7 @@ class profesorController extends Controller
                         if(result.value){
                         
                             window.location = "index";
+                            location.reload();
 
                         }
 

@@ -29,7 +29,7 @@
         </a>
     </li>
     <li role="presentation">
-        <a href="#id-of-content-3" role="tab" data-toggle="tab">
+        <a href="#id-of-content-4" role="tab" data-toggle="tab">
             Asignaturas
         </a>
     </li>
@@ -73,9 +73,47 @@
 <div role="tabpanel" id="id-of-content-2" class="tab-panel fade ">
         Tab content 2
     </div>
-    <div role="tabpanel" id="id-of-content-3" class="tab-pane fade">
+<div role="tabpanel" id="id-of-content-3" class="tab-panel fade ">
         Tab content 3
     </div>
+
+ <div role="tabpanel" id="id-of-content-4" class="tab-pane fade">
+   <div class="top-menu">
+       <ul class="nav pull-left top-menu">
+         <li><a class="logout" data-toggle="modal" href="#" data-target="#NuevaAsignatura">Crear Nueva Asignatura</a></li>
+      </ul>
+  </div>
+ 
+
+<!-- TABLA DE LAS Asignatura -->
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre de la Asignatura</th>
+      <th scope="col">Creditos</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <?php 
+        foreach($this->Get_Asignaturas  as $asignatura){   
+    ?>
+      <th scope="row"> <?=$asignatura['id_Asignatura']?> </th>
+      <td> <?=$asignatura['nombre']?> </td>
+      <td> <?=$asignatura['credito']?> </td>
+     
+    </tr>
+    <tr>
+        <?php }?>
+  </tbody>
+</table>
+  <?php   include_once ROOT.'views'.DS.'profesor'.DS.'asignaturas.phtml'; ?>
+<!-- FIN DE LA TABLA -->
+</div> 
+<!-- /FIN DE LA PESTAÑA Asignatura-->
+   
 </div>
   
 </div> <!-- fin de col12 --> 

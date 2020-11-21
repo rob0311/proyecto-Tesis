@@ -16,14 +16,15 @@
       <label for="tema">Nombre</label>
       <input type="text" class="form-control" id="nombre_clase" name="nombre_clase" placeholder="Nombre de la Clase">
     </div>
+   
      <div class="form-group col-md-6">
       <label for="Asignatura">Asignatura</label>
       <select name="clase_asignatura" id="clase_asignatura" class="form-control">
-        <option select disabled value="">Seleccione la Asignatura</option>
+        <option value="0">Seleccione la Asignatura</option>
         <?php 
           foreach($this->Get_Asignaturas as $Asignatura){
           ?>
-          <option value=""><?=$Asignatura['id_Asignatura']?></option>
+          <option value="<?=$Asignatura['id_Asignatura']?>"><?=$Asignatura['nombre']?></option>
         <?php } ?>
       </select>
     </div>

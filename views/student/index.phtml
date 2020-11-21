@@ -3,6 +3,20 @@
         echo "<script src='". $_layoutParams['js1'][$i]."'></script>";
 ?> 
 
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+  $("#button1").click(function(){
+    swal({
+      title:'Hola mundo!',
+      text:"Hola, estamos probando Sweet Alert 2",
+      type:'success'
+    })
+  
+  });
+})
+</script>
  <!--pagina de inicio de Estudiante-->
  <section id="main-content">
     <section class="wrapper">

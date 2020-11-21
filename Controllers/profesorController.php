@@ -17,7 +17,65 @@ class profesorController extends Controller
         {
             $this->_view->titulo = 'Profesor';
             $this->_view->Get_Clases = $this->_profesor->obtener_clases();
-            $this->_view->renderprofesor('index');    
+            $this->_view->Get_Asignaturas = $this->_profesor->obtener_asignatura();
+            $this->_view->renderprofesor('index');  
+
+
+            //crear Nueva Asignatura  
+            if($this->getInt('newAsignatura')==1)
+            {
+              $this->_view->datos=$_POST;
+             $tabla="asignatura";
+                    $datos = array("id"=>$_POST["inputId"],
+                               "nombre"=>$_POST["inputNombre"],
+                               "credito"=>$_POST["inputCredito"]
+                                );
+                   
+                    $repuesta=$this->_profesor->NewAsignatura($tabla,$datos);
+                if($repuesta == "ok"){
+
+                    echo'<script>
+                       swal({
+                        type: "success",
+                        title: "¡La Asignatura  ha sido creada correctamente!",
+                        showConfirmButton: true,
+                        confirmButtonText: "Cerrar"
+
+                    }).then(function(result){
+
+                        if(result.value){
+                          window.location("index");
+
+                        }
+
+                    });
+                  </script>';
+
+                }
+                else{
+
+                echo'<script>
+                       swal({
+                        type: "error",
+                        title: "¡Error en Crear Asignatura........!",
+                        showConfirmButton: true,
+                        confirmButtonText: "Cerrar"
+
+                    }).then(function(result){
+
+                        if(result.value){
+                        
+                            window.location = "index";
+
+                        }
+
+                    });
+                  </script>';
+
+
+
+            }
+            }//fin de crear asignatura
         }
 
         public function clases()
@@ -31,20 +89,43 @@ class profesorController extends Controller
         // crear clases
             if($this->getInt('crear_clase')==1)
             {
-                $this->_view->datos=$_POST;
-                $this->_profesor->newclass( 
-                    $this->getsql('id_clase'),
-                    $this->getsql('fecha_clase'),
-                    $this->getsql('nombre_clase'),
-                    $this->getTexto('contenido_clase'),
-                    $this->getsql('clase_asignatura')       
+                 $this->_view->datos=$_POST;
+                $tabla="clase";
+                    $datos = array("clase"=>$_POST["id_clase"],
+                               "fecha"=>$_POST["fecha_clase"],
+                               "tema"=>$_POST["nombre_clase"],
+                               "contenido"=>$_POST["contenido_clase"],
+                               "asignatura"=>$_POST["clase_asignatura"]
+                                );
                    
-                );
-                if(0){
-                 echo '<script>
+                    $repuesta=$this->_profesor->newclass($tabla,$datos);
+                if($repuesta == "ok"){
+
+                    echo'<script>
                        swal({
                         type: "success",
                         title: "¡La clase  ha sido creada correctamente!",
+                        showConfirmButton: true,
+                        confirmButtonText: "Cerrar"
+
+                    }).then(function(result){
+
+                        if(result.value){
+                          window.location.replace("profesor");
+
+                        }
+
+                    });
+                  </script>';
+
+                }
+
+            else{
+
+                echo'<script>
+                       swal({
+                        type: "error",
+                        title: "¡Error en Crear Clases........!",
                         showConfirmButton: true,
                         confirmButtonText: "Cerrar"
 
@@ -58,10 +139,15 @@ class profesorController extends Controller
 
                     });
                   </script>';
-                }
-                else{
-                    echo "Error en crear la clase";
-                }
+
+
+
+            }
+
+
+
+
+   
             }
 
         }
@@ -82,6 +168,7 @@ class profesorController extends Controller
             return $codigo;
         }
 
+  
         
         
     

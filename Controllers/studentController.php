@@ -53,10 +53,12 @@ class studentController extends Controller
 
         public function asistencia(){
 
-           if($this->std_model->asistir_clase('id_e'))
-             echo "funciona";
+           if($this->std_model->asistir_clase()){
+             echo 'Bienvenido a Clases.....';
+
+         }
          else
-             echo '0';
+             echo 'Ya Marco asistencia';
            }
     // descargar archivos del servidor
     public function descargar_archivo(){

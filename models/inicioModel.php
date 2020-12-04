@@ -74,7 +74,7 @@ class inicioModel extends Model{
     {
 
  $this->_db->prepare("insert into estudiante(carnet,nombres,apellidos,sexo,telefono,departamento,ciudad,email,carrera,pass,FechaNac,Estado)
-  VALUES (:carnet,:nomb,:pape,:sexo,:tel,:depa,:ciu,:email,:carr,:pass,:fna ,1)")
+  VALUES (:carnet,:nomb,:pape,:sexo,:tel,:depa,:ciu,:email,:carr,:pass,:fna ,'1')")
             ->execute(
                 array(
                     'carnet' => $carnet,
@@ -87,7 +87,7 @@ class inicioModel extends Model{
                     'email' => $email,
                     'carr' => $carrera,
                     'pass' => $pass,
-                    'fna' => $FechaNac
+                    'fna' => $FechaNac,
                     
                 )
             );

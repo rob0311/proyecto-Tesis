@@ -6,7 +6,7 @@
  * Time: 10:46 AM
  */
 //define('BASE_URL','http://192.168.137.1:8080/sisuni3/');
-define('BASE_URL','http://localhost/Proyecto-Tesis/');
+define('BASE_URL','http://localhost:8080/Proyecto-Tesis/');
 
 define('DEFAULT_CONTROLLER','index');
 define('DEFAULT_LAYOUT','uni');

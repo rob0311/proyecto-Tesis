@@ -1,3 +1,61 @@
+
+<section id="contenido">
+    <section class="wrapper"> 
+<div class="row content-panel">
+    
+        <h1 class="text-center">Asignaturas</h1>
+ <div class="top-menu">
+       <ul class="nav pull-left top-menu">
+         <li><a class="logout" data-toggle="modal" href="#" data-target="#NuevaAsignatura">Nueva </a></li>
+      </ul>
+  </div>
+  <div class="col-lg-12">  
+<div class="container"> 
+<!-- TABLA DE LAS Asignatura -->
+<table class="table  datatable">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre de la Asignatura</th>
+      <th scope="col">Creditos</th>
+      <th scope="col">Accion</th>
+    
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <?php 
+        foreach($this->Get_Asignaturas  as $asignatura){   
+    ?>
+      <th scope="row"> <?=$asignatura['id_Asignatura']?> </th>
+      <td> <?=$asignatura['nombre']?> </td>
+      <td> <?=$asignatura['credito']?> </td>
+      <td><button class="btn btn-info editBoton"  >Editar</button> /                         
+      <button class="btn btn-danger delBoton">Eliminar</button></td>
+    </tr>
+    
+        <?php }?>
+
+  </tbody>
+</table>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".datatable").DataTable();
+  })
+</script>
+<!-- FIN DE LA TABLA -->
+</div><!-- FIN DEl dDIV CONTAINER-->
+ </div>
+</div>
+    </section>
+</section>
+
+
+
+
+
+
 <!-- Modal -->
 <div id="NuevaAsignatura" class="modal fade" role="dialog" style="z-index: 100000">
     <div class="modal-dialog">
@@ -29,8 +87,12 @@
                         <input type="number" class="form-control" id="inputCredito" name="inputCredito" value="1" />
                     </div>
              <button type="submit" class="btn btn-primary" id="creacion_asig">Crear</button>
+
+             
                 </form>
+                 
             </div>
+
             
             <!-- Modal Footer -->
             <div class="modal-footer">

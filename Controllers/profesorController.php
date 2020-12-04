@@ -16,67 +16,13 @@ class profesorController extends Controller
         public function index()
         {
             $this->_view->titulo = 'Profesor';
+             $this->_view->setJs1(array('main'));
             $this->_view->Get_Clases = $this->_profesor->obtener_clases();
             $this->_view->Get_Asignaturas = $this->_profesor->obtener_asignatura();
             $this->_view->renderprofesor('index');  
 
 
-            //crear Nueva Asignatura  
-            if($this->getInt('newAsignatura')==1)
-            {
-              $this->_view->datos=$_POST;
-             $tabla="asignatura";
-                    $datos = array("id"=>$_POST["inputId"],
-                               "nombre"=>$_POST["inputNombre"],
-                               "credito"=>$_POST["inputCredito"]
-                                );
-                   
-                    $repuesta=$this->_profesor->NewAsignatura($tabla,$datos);
-                if($repuesta == "ok"){
-
-                    echo'<script>
-                       swal({
-                        type: "success",
-                        title: "¡La Asignatura  ha sido creada correctamente!",
-                        showConfirmButton: true,
-                        confirmButtonText: "Cerrar"
-
-                    }).then(function(result){
-
-                        if(result.value=true){
-                          window.location.reload("index");
-
-                        }
-
-                    });
-                  </script>';
-
-                }
-                else{
-
-                echo'<script>
-                       swal({
-                        type: "error",
-                        title: "¡Error en Crear Asignatura........!",
-                        showConfirmButton: true,
-                        confirmButtonText: "Cerrar"
-
-                    }).then(function(result){
-
-                        if(result.value){
-                        
-                            window.location = "index";
-                            location.reload();
-
-                        }
-
-                    });
-                  </script>';
-
-
-
-            }
-            }//fin de crear asignatura
+          
         }
 
         public function clases()
@@ -132,9 +78,9 @@ class profesorController extends Controller
 
                     }).then(function(result){
 
-                        if(result.value){
+                        if(result.value=true){
                         
-                            window.location = "clases";
+                            window.location = ("clases");
 
                         }
 
@@ -150,6 +96,77 @@ class profesorController extends Controller
    
             }
 
+        }
+
+
+ public function asignaturas()
+        {
+            $this->_view->titulo='Asignaturas';
+            $this->_view->Get_Asignaturas = $this->_profesor->obtener_asignatura();
+            $this->_view->renderprofesor('asignaturas','index');
+
+
+              //crear Nueva Asignatura  
+              if($this->getInt('newAsignatura')==1)
+              {
+                $this->_view->datos=$_POST;
+               $tabla="asignatura";
+                      $datos = array("id"=>$_POST["inputId"],
+                                 "nombre"=>$_POST["inputNombre"],
+                                 "credito"=>$_POST["inputCredito"]
+                                  );
+                     
+                      $repuesta=$this->_profesor->NewAsignatura($tabla,$datos);
+                  if($repuesta == "ok"){
+  
+                      echo'<script>
+                         swal({
+                          type: "success",
+                          title: "¡La Asignatura  ha sido creada correctamente!",
+                          showConfirmButton: true,
+                          confirmButtonText: "Cerrar"
+  
+                      }).then(function(result){
+  
+                          if(result.value=true){
+                            window.location.reload("profesor/index#id-of-content-4");
+  
+                          }
+  
+                      });
+                    </script>';
+  
+                  }
+                  else{
+  
+                  echo'<script>
+                         swal({
+                          type: "error",
+                          title: "¡Error en Crear Asignatura........!",
+                          showConfirmButton: true,
+                          confirmButtonText: "Cerrar"
+  
+                      }).then(function(result){
+  
+                          if(result.value){
+                          
+                              window.location = "index";
+                              location.reload();
+  
+                          }
+  
+                      });
+                    </script>';
+  
+  
+  
+              }
+              }//fin de crear asignatura
+}//fin de la funcion asignatura
+
+
+        function elimAsig ($id){
+      $this->_profesor-> eliminarAsig($id);
         }
 
         function numero_aleatorio ($ninicial, $nfinal) {

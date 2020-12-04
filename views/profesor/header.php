@@ -27,51 +27,31 @@
   <link href="<?php echo $_layoutParams['ruta_css'];?>jquery.gritter.css " rel="stylesheet">
   <link href="<?php echo $_layoutParams['ruta_css'];?>miEstilo.css" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo $_layoutParams['ruta_css'];?>sweetalert2.css">
+ 
+ 
+ 
+  <!-- Paginacion  -->
+    <script src="<?php echo $_layoutParams['ruta_js'];?>jquery-3.1.1.min.js"></script>
+     <link rel="stylesheet" href="<?php echo $_layoutParams['ruta_css'];?>datatables/datatables.min.css">
+     <script src="<?php echo $_layoutParams['ruta_js'];?>datatables/datatables.min.js"></script>
+<script type="text/javascript">
+  if (window.history.replaceState) { // verificamos disponibilidad
+    window.history.replaceState(null, null, window.location.href);
+}
+</script>
   
-  <!-- Modernizer Script for old Browsers   -->
-  <script src="<?php echo $_layoutParams['ruta_js'];?>jquery-3.1.1.min.js"></script>
-
-  <!-- Menu Toggle Script -->
-
-  
-<meta http-equiv="Expires" content="0">
- 
-<meta http-equiv="Last-Modified" content="0">
- 
-<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
- 
-<meta http-equiv="Pragma" content="no-cache">
- 
 </head>
-<body>                                                                                                                   
-  <section id="container">
-    <!--header start-->
-     <header  class="header black-bg">
-
-      <!--logo start-->
+<body>     
+<header>
+      <div class="container">
+        <div class="row ">
+           <div class="hidden-xs col-sm-6 col-md-4 col-lg-4">
+                <!--logo start-->
       <a href="<?php echo BASE_URL.'index';?>" class="logo"><b><span>UNAN LEON </span></b></a>
       <!--logo end-->
-        <!--Notificaciones-->
-     <div class="nav notify-row" id="top_menu">
-        <!--  notification start -->
-          <ul class="nav top-menu">
-          <!-- settings start -->
-            <li class="dropdown">
-             <form class="form-search content-search navbar-form" action=" " method="post">
-               <div class="input-group">
-                 <input  placeholder="Buscar" class="form-control form-text" type="text" size="40" name="" />
-                 <span class="input-group-btn">
-                <button class="btn btn-default" type="button">
-                <i class="fa fa-search"></i>
-                </button>    
-                </span>
-              </div>
-            </form>
-          </li>
-        <!--fin de caja de Busqueda-->
-         </ul>
-    </div>
-   <div class="top-menu" id="menu">
+                 </div>
+           <div class="col-xs-12 col-sm-6 col-md-8 col-lg-8 centrar ">
+               <div class="top-menu" id="menu">
        <ul class="nav pull-right top-menu">
          <li><a class="logout" href="<?php echo BASE_URL . 'index/cerrar/' ; ?>"> Cerrar sesión</a></li>
          <li><p class="centered"><a href="<?php echo BASE_URL . 'profesor/perfil/' ;?>">
@@ -80,8 +60,57 @@
         <h5 class="centered"><?php echo Session::get("nombre_profesor"); ?></h5></li>
          </ul>
   </div>
-    
-   </header>
-  </section>
+                   </div>
+           
+        </div>
+    </div>
+ </header>     
+
+<nav class="navbar navbar-default navbar navbar-inverse navbar-fixed-butom role=navigation">
+ <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+      data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">cambiar navegacion</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+      </button>
+      <a href="#" class="navbar-brand">SACUR </a>
+    </div><!-- /fin de la clase navbar-header -->
+  <div id="navbar" class="navbar-collapse collapse">
+     <ul class="nav  nav-pills ">
+        <li class="active "><a href="index.php">Inicio</a></li>
+        <li  class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Asignaturas<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+               <li><a href="<?php echo BASE_URL.'profesor/asignaturas'?>">Ver Todas</a></li>
+               <li><a data-toggle="modal" href="#" data-target="#NuevaAsignatura">Agregar Nueva Asinatura</a></li>
+            </ul>
+        </li><!-- /fin de publicar -->
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Calificaciones<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+               <li><a href="tutoriales.php">VER todo</a></li>
+               <li><a href="problema.php">agregar Nueva</a></li>
+            </ul>
+        </li><!-- /fin de ayuda -->
+        <li><a href="conf.php">Informes</a></li>
+         <li><a href="conf.php">Preguntas</a></li>
+          <li><a href="conf.php">Trabajos de Clases</a></li>
+     </ul> <!-- /fin de clase "nav navbar-nav -->
+  </div> <!-- /fin de clase collapse navbar-collapse navbar-ex1-collapse -->  
+
+     <form action="resul_bus.php" class="navbar-form navbar-left">
+        <div class="form-group">
+            <input type="search" required class="form-control"></div>  
+        <button type="submit" class="btn btn-default">Buscar </button>   
+        
+      </form> 
+      </div>
+ </nav>
+  
     <!--header end-->
+
+
+ 
+  
      

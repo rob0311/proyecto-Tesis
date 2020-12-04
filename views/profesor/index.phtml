@@ -2,9 +2,9 @@
         Contenido de la vista profesor
  *********************************************************************************************************************************************************** -->
  <!--main content start-->
- <?php if(isset($_layoutParams['js']) && count($_layoutParams['js']))
-    for($i=0;$i<count($_layoutParams['js']);$i++)
-        echo "<script src='". $_layoutParams['js'][$i]."'></script>";?> 
+ <?php if(isset($_layoutParams['js1']) && count($_layoutParams['js1']))
+    for($i=0;$i<count($_layoutParams['js1']);$i++)
+        echo "<script src='". $_layoutParams['js1'][$i]."'></script>";?> 
   
  <section id="contenido">
     <section class="wrapper">
@@ -20,7 +20,7 @@
     </li>
     <li role="presentation" >
         <a href="#id-of-content-2" role="tab" data-toggle="tab">
-            Participantes
+            Asignar Grupos
         </a>
     </li>
     <li role="presentation">
@@ -30,7 +30,7 @@
     </li>
     <li role="presentation">
         <a href="#id-of-content-4" role="tab" data-toggle="tab">
-            Asignaturas
+            
         </a>
     </li>
 </ul>
@@ -40,15 +40,16 @@
     <div role="tabpanel" id="id-of-content-1" class="tab-pane fade active in">
 
 <a href="<?php echo BASE_URL.'profesor/clases'?>"><button type="submit" class="btn btn-primary">Nueva Clase</button></a>
-
+<br><br><br><br>
 <!-- TABLA DE LAS CLASES -->
-<table class="table">
+<table class="table  datatable">
   <thead class="thead-dark">
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Nombre de la Clase</th>
       <th scope="col">Asignatura</th>
       <th scope="col">Fecha de Cración</th>
+      <th scope="col">ACCIONES</th>
     </tr>
   </thead>
   <tbody>
@@ -60,11 +61,18 @@
       <td> <?=$Clases['tema']?> </td>
       <td> <?=$Clases['asignatura_id_Asignatura']?> </td>
       <td> <?=$Clases['fecha']?> </td>
+      <td><button class="btn btn-info editBoton" >Editar</button>
+      / <button class="btn btn-danger delBoton">Eliminar</button></td>
     </tr>
-    <tr>
+    
         <?php }?>
   </tbody>
 </table>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".datatable").DataTable();
+  })
+</script>
 
 <!-- FIN DE LA TABLA -->
 </div> 
@@ -78,39 +86,10 @@
     </div>
 
  <div role="tabpanel" id="id-of-content-4" class="tab-pane fade">
-   <div class="top-menu">
-       <ul class="nav pull-left top-menu">
-         <li><a class="logout" data-toggle="modal" href="#" data-target="#NuevaAsignatura">Crear Nueva Asignatura</a></li>
-      </ul>
-  </div>
+  
  
 
-<!-- TABLA DE LAS Asignatura -->
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Nombre de la Asignatura</th>
-      <th scope="col">Creditos</th>
-      
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-    <?php 
-        foreach($this->Get_Asignaturas  as $asignatura){   
-    ?>
-      <th scope="row"> <?=$asignatura['id_Asignatura']?> </th>
-      <td> <?=$asignatura['nombre']?> </td>
-      <td> <?=$asignatura['credito']?> </td>
-     
-    </tr>
-    <tr>
-        <?php }?>
-  </tbody>
-</table>
-  <?php   include_once ROOT.'views'.DS.'profesor'.DS.'asignaturas.phtml'; ?>
-<!-- FIN DE LA TABLA -->
+
 </div> 
 <!-- /FIN DE LA PESTAÑA Asignatura-->
    

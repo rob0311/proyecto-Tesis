@@ -19,7 +19,8 @@
     
 
   <script src="<?php echo $_layoutParams['ruta_js'];?>bootstrap.min.js"></script>
-  
+   
+    <script src="<?php echo $_layoutParams['ruta_js'];?>datatables/npm.js"></script>
   
   <!--common script for all pages-->
  
@@ -40,7 +41,12 @@
   <!--script for this page-->
  
   <script src="<?php echo $_layoutParams['ruta_js'];?>zabuto_calendar.js"></script>
+  <!--script para DataTable-->
+ 
   
+ 
+
+
   
   
   <script type="application/javascript">
@@ -85,6 +91,7 @@
       console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
     }
   </script>
+  
 
   <!--BACKSTRETCH-->
   <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
@@ -94,6 +101,12 @@
       speed: 500
     });
   </script>
+  
+
 </body>
+
+
+
+
 
 </html>

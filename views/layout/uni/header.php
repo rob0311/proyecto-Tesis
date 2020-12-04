@@ -6,6 +6,7 @@
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+  
   <title><?php if(isset($this->titulo)) echo $this->titulo; ?></title>
 
   <!-- Favicons -->
@@ -15,6 +16,8 @@
   <!-- Bootstrap core CSS -->
   <link href="<?php echo $_layoutParams['ruta_css'];?>bootstrap.min.css" rel="stylesheet">
   <link href="<?php echo $_layoutParams['ruta_css'];?>bootstrap.css" rel="stylesheet">
+   <link href="<?php echo $_layoutParams['ruta_css'];?>bootstrap-theme.css" rel="stylesheet">
+   <link href="<?php echo $_layoutParams['ruta_css'];?>bootstrap-theme.min.css" rel="stylesheet">
 
   <!--external css-->
   <link href="<?php echo $_layoutParams['ruta_css'];?>font-awesome/css/font-awesome.css" rel="stylesheet" />
@@ -26,10 +29,19 @@
   <link href="<?php echo $_layoutParams['ruta_css'];?>jquery.gritter.css " rel="stylesheet">
   <link href="<?php echo $_layoutParams['ruta_css'];?>miEstilo.css" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo $_layoutParams['ruta_css'];?>sweetalert2.css">
+   
+  <!-- Paginacion  -->
+    <script src="<?php echo $_layoutParams['ruta_js'];?>jquery-3.1.1.min.js"></script>
+     <link rel="stylesheet" href="<?php echo $_layoutParams['ruta_css'];?>datatables/datatables.min.css">
+     <script src="<?php echo $_layoutParams['ruta_js'];?>datatables/datatables.min.js"></script>
   
-  <!-- Modernizer Script for old Browsers   -->
-  <script src="<?php echo $_layoutParams['ruta_js'];?>jquery-3.1.1.min.js"></script>
- 
+
+  
+<script type="text/javascript">
+  if (window.history.replaceState) { // verificamos disponibilidad
+    window.history.replaceState(null, null, window.location.href);
+}
+</script>
 </head>
 <body>                                                                                                                   
   <section id="container">

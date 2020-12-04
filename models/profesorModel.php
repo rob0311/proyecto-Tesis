@@ -68,6 +68,13 @@
             return $clases->fetchAll();
         }
 
+
+        public function  eliminarAsig($id){
+
+        $this->_db->query("DELETE FROM asignatura WHERE id_Asignatura = $id");
+        }
+       
+
     }
 
 

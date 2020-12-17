@@ -26,8 +26,8 @@ CREATE TABLE IF NOT EXISTS `sacur`.`clase` (
 CONSTRAINT `fk_clase_asignatura1_idx`
     FOREIGN KEY (`asignatura_id_Asignatura`)
     REFERENCES `sacur`.`asignatura` (`id_Asignatura`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
 
 -- -----------------------------------------------------
@@ -62,8 +62,8 @@ CREATE TABLE IF NOT EXISTS `sacur`.`archivo` (
 CONSTRAINT `fk_archivo_clase1`
     FOREIGN KEY (`fk_clase`)
     REFERENCES `sacur`.`clase` (`idclase`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 
   );
 
@@ -84,8 +84,8 @@ CREATE TABLE IF NOT EXISTS `sacur`.`preguntas` (
 CONSTRAINT `fk_preguntas_clase1`
     FOREIGN KEY (`fk_clase`)
     REFERENCES `sacur`.`clase` (`idclase`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
 );
 
 
@@ -106,8 +106,8 @@ CREATE TABLE IF NOT EXISTS `sacur`.`asignar_tarea` (
 CONSTRAINT `fk_asignar_tarea_clase1`
     FOREIGN KEY (`fk_clase`)
     REFERENCES `sacur`.`clase` (`idclase`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
   );
 
 
@@ -123,13 +123,13 @@ CREATE TABLE IF NOT EXISTS `sacur`.`asistencia` (
    CONSTRAINT `fk_asistencia_estudiante1`
     FOREIGN KEY (`estudiante_carnet`)
     REFERENCES `sacur`.`estudiante` (`carnet`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION ,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
     CONSTRAINT `fk_asistencia_clase1`
     FOREIGN KEY (`clase_idclase`)
     REFERENCES `sacur`.`clase` (`idclase`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION );
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
 
 
 -- -----------------------------------------------------
@@ -160,13 +160,13 @@ CREATE TABLE IF NOT EXISTS `sacur`.`recibe` (
   CONSTRAINT `fk_recibe_estudiante1`
     FOREIGN KEY (`estudiante_carnet`)
     REFERENCES `sacur`.`estudiante` (`carnet`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_recibe_asignatura1`
     FOREIGN KEY (`asignatura_id_Asignatura`)
     REFERENCES `sacur`.`asignatura` (`id_Asignatura`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION 
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
   );
 
 
@@ -181,13 +181,13 @@ CREATE TABLE IF NOT EXISTS `sacur`.`imparte` (
   CONSTRAINT `fk_profesor_profesor1_idx`
     FOREIGN KEY (`profesor_idprofesor`)
     REFERENCES `sacur`.`profesor` (`idprofesor`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_imparte_asignatura1_idx`
     FOREIGN KEY (`asignatura_id_Asignatura`)
     REFERENCES `sacur`.`asignatura` (`id_Asignatura`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION );
+    ON DELETE CASCADE
+    ON UPDATE CASCADE );
 
 
 -- -----------------------------------------------------
@@ -202,12 +202,12 @@ CREATE TABLE IF NOT EXISTS `sacur`.`Notas` (
   CONSTRAINT `fk_Notas_estudiante1`
     FOREIGN KEY (`estudiante_carnet`)
     REFERENCES `sacur`.`estudiante` (`carnet`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_Notas_asignatura1`
     FOREIGN KEY (`asignatura_id_Asignatura`)
     REFERENCES `sacur`.`asignatura` (`id_Asignatura`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
 
 

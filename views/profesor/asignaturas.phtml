@@ -1,4 +1,7 @@
-
+ <?php if(isset($_layoutParams['js1']) && count($_layoutParams['js1']))
+    for($i=0;$i<count($_layoutParams['js1']);$i++)
+        echo "<script src='". $_layoutParams['js1'][$i]."'></script>";?> 
+  
 <section id="contenido">
     <section class="wrapper"> 
 <div class="row content-panel">
@@ -32,7 +35,7 @@
       <td> <?=$asignatura['nombre']?> </td>
       <td> <?=$asignatura['credito']?> </td>
       <td><button class="btn btn-info editBoton"  >Editar</button> /                         
-      <button class="btn btn-danger delBoton">Eliminar</button></td>
+      <button id="btn_elim_asig" class="btn btn-danger delBoton">Eliminar</button></td>
     </tr>
     
         <?php }?>
@@ -73,18 +76,18 @@
             <div class="modal-body">
                 <p class="statusMsg"></p>
                  <form id="form_nueva_asig" action="" method="post" name="formasig">
-                  <input type="hidden" value="1" name="newAsignatura" />
+                  <input type="hidden" value="1" name="newAsignatura"/>
                     <div class="form-group">
                         <label for="inputid">Codigo de la Asignatura</label>
-                        <input type="text" class="form-control" id="inputId" name="inputId"  placeholder="ingrese codigo"/>
+                        <input type="text" class="form-control" id="inputId" name="inputId"  placeholder="ingrese codigo"  required />
                     </div>
                     <div class="form-group">
                         <label for="inputnombre">Nombre</label>
-                        <input type="text" class="form-control" id="inputNombre" name="inputNombre" placeholder="ingrese el nombre"/>
+                     <input type="text" class="form-control" id="inputNombre" name="inputNombre" placeholder="ingrese el nombre" required />
                     </div>
                     <div class="form-group">
                         <label for="inputcredito">Creditos</label>
-                        <input type="number" class="form-control" id="inputCredito" name="inputCredito" value="1" />
+                        <input type="number" class="form-control" id="inputCredito" name="inputCredito" value="1" required />
                     </div>
              <button type="submit" class="btn btn-primary" id="creacion_asig">Crear</button>
 

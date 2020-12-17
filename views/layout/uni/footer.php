@@ -20,8 +20,7 @@
 
   <script src="<?php echo $_layoutParams['ruta_js'];?>bootstrap.min.js"></script>
    
-    <script src="<?php echo $_layoutParams['ruta_js'];?>datatables/npm.js"></script>
-  
+   
   <!--common script for all pages-->
  
   <script type="text/javascript" src="<?php echo $_layoutParams['ruta_js'];?>jquery.gritter.js"></script>

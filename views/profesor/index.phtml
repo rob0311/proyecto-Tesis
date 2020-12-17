@@ -42,13 +42,13 @@
 <a href="<?php echo BASE_URL.'profesor/clases'?>"><button type="submit" class="btn btn-primary">Nueva Clase</button></a>
 <br><br><br><br>
 <!-- TABLA DE LAS CLASES -->
-<table class="table  datatable">
+<table class="table  datatable" id="tb_clases">
   <thead class="thead-dark">
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Nombre de la Clase</th>
       <th scope="col">Asignatura</th>
-      <th scope="col">Fecha de Cración</th>
+      <th scope="col">Fecha de Creación</th>
       <th scope="col">ACCIONES</th>
     </tr>
   </thead>
@@ -57,12 +57,12 @@
     <?php 
         foreach($this->Get_Clases as $Clases){   
     ?>
-      <th scope="row"> <?=$Clases['idclase']?> </th>
+      <td scope="row"> <?=$Clases['idclase']?> </td>
       <td> <?=$Clases['tema']?> </td>
-      <td> <?=$Clases['asignatura_id_Asignatura']?> </td>
+      <td> <?=$Clases['nombre']?> </td>
       <td> <?=$Clases['fecha']?> </td>
       <td><button class="btn btn-info editBoton" >Editar</button>
-      / <button class="btn btn-danger delBoton">Eliminar</button></td>
+      / <button class="btn-borrar btn btn-danger">Borrar</button> </td>
     </tr>
     
         <?php }?>

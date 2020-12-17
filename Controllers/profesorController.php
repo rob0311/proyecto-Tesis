@@ -16,7 +16,7 @@ class profesorController extends Controller
         public function index()
         {
             $this->_view->titulo = 'Profesor';
-             $this->_view->setJs1(array('main'));
+            $this->_view->setJs1(array('main'));
             $this->_view->Get_Clases = $this->_profesor->obtener_clases();
             $this->_view->Get_Asignaturas = $this->_profesor->obtener_asignatura();
             $this->_view->renderprofesor('index');  
@@ -102,6 +102,7 @@ class profesorController extends Controller
  public function asignaturas()
         {
             $this->_view->titulo='Asignaturas';
+             $this->_view->setJs1(array('main'));
             $this->_view->Get_Asignaturas = $this->_profesor->obtener_asignatura();
             $this->_view->renderprofesor('asignaturas','index');
 
@@ -116,7 +117,7 @@ class profesorController extends Controller
                                  "credito"=>$_POST["inputCredito"]
                                   );
                      
-                      $repuesta=$this->_profesor->NewAsignatura($tabla,$datos);
+                      $repuesta=$this->_profesor->NewAsignatura($tabla,$datos, $this->getsql('inputId'));
                   if($repuesta == "ok"){
   
                       echo'<script>
@@ -129,7 +130,7 @@ class profesorController extends Controller
                       }).then(function(result){
   
                           if(result.value=true){
-                            window.location.reload("profesor/index#id-of-content-4");
+                            window.location.reload("profesor/asignaturas  ");
   
                           }
   
@@ -150,8 +151,7 @@ class profesorController extends Controller
   
                           if(result.value){
                           
-                              window.location = "index";
-                              location.reload();
+                              window.location.reload();
   
                           }
   
@@ -169,12 +169,23 @@ class profesorController extends Controller
       $this->_profesor-> eliminarAsig($id);
         }
 
-        function numero_aleatorio ($ninicial, $nfinal) {
+  //*****************************************//
+    function borrarClase(){
+
+       if($this->_profesor->eliminarclass($this->getsql('idclase')))
+             echo "clase eliminada";
+         else
+             echo '0'; 
+     
+    }
+  
+
+    function numero_aleatorio ($ninicial, $nfinal) {
             $numero = rand($ninicial, $nfinal);
         
             return $numero;
         }
-        function genera_codigo ($longitud) {
+     function genera_codigo ($longitud) {
             $caracteres = array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
             $codigo = '';
         

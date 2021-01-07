@@ -84,7 +84,7 @@
         <li  class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Asignaturas<b class="caret"></b></a>
             <ul class="dropdown-menu">
                <li><a href="<?php echo BASE_URL.'profesor/asignaturas'?>">Ver Todas</a></li>
-               <li><a data-toggle="modal" href="#" data-target="#NuevaAsignatura">Agregar Nueva Asignatura</a></li>
+               <li><a data-toggle="modal" href="<?php echo BASE_URL.'#'?>" data-target="#NuevaAsignatura">Agregar Nueva Asignatura</a></li>
             </ul>
         </li><!-- /fin de publicar -->
         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Calificaciones<b class="caret"></b></a>

@@ -3,6 +3,7 @@
         echo "<script src='". $_layoutParams['js1'][$i]."'></script>";?> 
   
 <section id="contenido">
+ <div id="url"> <input type="hidden" value="<?=BASE_URL?>" id="base_url" /></div> 
     <section class="wrapper"> 
 <div class="row content-panel">
     
@@ -31,11 +32,11 @@
     <?php 
         foreach($this->Get_Asignaturas  as $asignatura){   
     ?>
-      <th scope="row"> <?=$asignatura['id_Asignatura']?> </th>
+      <td scope="row"> <?=$asignatura['id_Asignatura']?> </td>
       <td> <?=$asignatura['nombre']?> </td>
       <td> <?=$asignatura['credito']?> </td>
-      <td><button class="btn btn-info editBoton"  >Editar</button> /                         
-      <button id="btn_elim_asig" class="btn btn-danger delBoton">Eliminar</button></td>
+      <td><button class="btn btn-info editBoton" >Editar</button>
+      / <button class="btn-borrar_asig btn btn-danger">Borrar</button> </td>
     </tr>
     
         <?php }?>

@@ -87,20 +87,30 @@
 
 
 //*************************************************************
-        public function  eliminarAsig($id){
-
-        $this->_db->query("DELETE FROM asignatura WHERE id_Asignatura = $id");
+        public function  eliminarAsig($id_asig){
+           $asig= $this->_db->query("DELETE FROM asignatura WHERE id_Asignatura ='$id_asig'");
+           $count=$asig->rowCount();
+                  if($count> 0){
+                    return true;
+                  }
+            return false ;
+       
         }
        
 //*****************************************************************
-         public function  eliminarclass($id){
-
-      $class= $this->_db->query("DELETE FROM `clase` WHERE `clase`.`idclase` = '$id' ");
-        if($class->fetch()){
-                    return true;
+         public function  eliminarclass($idclass){
+            $class= $this->_db->query("DELETE FROM clase WHERE idclase ='$idclass'");
+                if(mysql_affected_rows()>0){
+                 return true;
                 }
+                   
+                
                   return false ;
-        }
+        
+         }
+//* *****************************************************************
+    
+      
 
 
 

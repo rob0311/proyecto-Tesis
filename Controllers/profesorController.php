@@ -4,14 +4,16 @@ class profesorController extends Controller
 
 
 {
-    
+   
     private $_profesor;
         public function __construct()
         {
             parent::__construct();
             $this->_profesor=$this->loadModel('profesor');
+          
     
         }
+ 
     
         public function index()
         {
@@ -49,6 +51,7 @@ class profesorController extends Controller
                 if($repuesta == "ok"){
 
                     echo'<script>
+                    let base=$("#base").val();
                        swal({
                         type: "success",
                         title: "¡La clase  ha sido creada correctamente!",
@@ -58,7 +61,8 @@ class profesorController extends Controller
                     }).then(function(result){
 
                         if(result.value = true){
-                          window.location.replace("index");
+
+                         window.location.replace(base+"profesor");
 
                         }
 
@@ -102,7 +106,7 @@ class profesorController extends Controller
  public function asignaturas()
         {
             $this->_view->titulo='Asignaturas';
-             $this->_view->setJs1(array('main'));
+            $this->_view->setJs1(array('main'));
             $this->_view->Get_Asignaturas = $this->_profesor->obtener_asignatura();
             $this->_view->renderprofesor('asignaturas','index');
 
@@ -130,7 +134,7 @@ class profesorController extends Controller
                       }).then(function(result){
   
                           if(result.value=true){
-                            window.location.reload("profesor/asignaturas  ");
+                            window.location.reload("profesor/asignaturas");
   
                           }
   
@@ -165,17 +169,23 @@ class profesorController extends Controller
 }//fin de la funcion asignatura
 
 
-        function elimAsig ($id){
-      $this->_profesor-> eliminarAsig($id);
-        }
-
-  //*****************************************//
-    function borrarClase(){
-
-       if($this->_profesor->eliminarclass($this->getsql('idclase')))
-             echo "clase eliminada";
+        
+        function elimAsig (){
+    
+        if($this->_profesor->eliminarAsig($this->getsql('idAsig')))
+             echo "1";
          else
-             echo '0'; 
+             echo '0';
+     
+    }
+
+  //********************
+      function elimClass (){
+    
+        if($this->_profesor->eliminarclass($this->getsql('idclass')))
+             echo "1";
+         else
+             echo '0';
      
     }
   

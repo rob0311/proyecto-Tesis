@@ -7,6 +7,7 @@
         echo "<script src='". $_layoutParams['js1'][$i]."'></script>";?> 
   
  <section id="contenido">
+ <div id="url"> <input type="hidden" value="<?=BASE_URL?>" id="base_ur" /></div> 
     <section class="wrapper">
         <div class="row">
           <div class="col-xs-12 col-md-12 ">        
@@ -30,7 +31,7 @@
     </li>
     <li role="presentation">
         <a href="#id-of-content-4" role="tab" data-toggle="tab">
-            
+           menu 
         </a>
     </li>
 </ul>
@@ -38,6 +39,7 @@
 <!-- INICIO DE LA PESTAÑA CLASES -->
 <div class="tab-content ds">
     <div role="tabpanel" id="id-of-content-1" class="tab-pane fade active in">
+      
 
 <a href="<?php echo BASE_URL.'profesor/clases'?>"><button type="submit" class="btn btn-primary">Nueva Clase</button></a>
 <br><br><br><br>
@@ -73,9 +75,10 @@
     $(".datatable").DataTable();
   })
 </script>
-
+ 
 <!-- FIN DE LA TABLA -->
 </div> 
+
 <!-- /FIN DE LA PESTAÑA CLASES -->
 
 <div role="tabpanel" id="id-of-content-2" class="tab-panel fade ">
@@ -87,7 +90,7 @@
 
  <div role="tabpanel" id="id-of-content-4" class="tab-pane fade">
   
- 
+ contenido 4
 
 
 </div> 

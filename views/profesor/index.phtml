@@ -55,19 +55,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-    <?php 
-        foreach($this->Get_Clases as $Clases){   
-    ?>
-      <td scope="row"> <?=$Clases['idclase']?> </td>
-      <td> <?=$Clases['tema']?> </td>
-      <td> <?=$Clases['nombre']?> </td>
-      <td> <?=$Clases['fecha']?> </td>
-      <td><button class="btn btn-info editBoton" >Editar</button>
-      / <button class="btn-borrar btn btn-danger">Borrar</button> </td>
-    </tr>
-    
-        <?php }?>
+    <?= $this->contenido ?>
   </tbody>
 </table>
 <script type="text/javascript">
@@ -77,6 +65,69 @@
 </script>
  
 <!-- FIN DE LA TABLA -->
+<!-- Modal Editar Clases -->
+<div id="EditaClases" class="modal fade" role="dialog" style="z-index: 100000">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Editar Clase</h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+             <p class="statusMsg"></p>
+             <form id="form_nueva_asig" action="" method="post" name="formasig">
+             <input type="hidden" value="1" name="EditClases"/>
+              <div class="form-group">
+                    <label for="inputid">Codigo de la Clase</label>
+                    <input type="text" class="form-control" id="editId" name="editId"  placeholder="ingrese codigo"  readonly />
+              </div>
+              <div class="form-group">
+                  <label for="inputnombre">Nombre</label>
+                  <input type="text" class="form-control" id="editNombre" name="editNombre" placeholder="ingrese el nombre" required />
+              </div>
+              <div class="form-group">
+                   <label for="Asignatura">Asignatura</label>
+                   <select name="asignatura" id="asignatura" class="form-control">
+                    <option value="0">Seleccione la Asignatura</option>
+                      <?php 
+                        foreach($this->Get_Asignaturas as $Asignatura){
+                       ?>
+                    <option value="<?=$Asignatura['id_Asignatura']?>"><?=$Asignatura['nombre']?></option>
+                     <?php } ?>
+                  </select>
+             </div>
+              <div class="form-group">
+                  <label for="fecha_clase">Fecha de Creación</label>
+                  <input type="date" class="form-control" id="fecha_clase" name="fecha_clase">
+             </div>
+             <div class="form-group">
+                <label for="contenido_clase">Contenido</label>
+                 <textarea  id="contenido_clase" name="contenido_clase" class="form-control" cols="30" rows="10" placeholder="Contenido de la clase" form="form_CrearClase"></textarea>
+              </div>
+
+             <button type="submit" class="btn btn-primary" id="creacion_asig">Actualizar</button>
+
+             
+                </form>
+                 
+            </div>
+
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+               
+            </div>
+        </div>
+    </div>
+
+</div>
 </div> 
 
 <!-- /FIN DE LA PESTAÑA CLASES -->

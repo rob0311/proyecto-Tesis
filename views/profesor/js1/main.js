@@ -1,5 +1,31 @@
 
   $(document).ready(function(){
+    /*=============================================
+CAPTURAR LOS DATOS PARA EDITAR Clases
+=============================================*/
+
+      $(document).on("click",".editBtnClass",function(){
+        let datos = JSON.parse($(this).attr("data-p"));
+        $("#editId").val(datos['idclase']);
+        $("#editNombre").val(datos['tema']);
+        $("#asignatura").val(datos['nombre']);
+        $("#fecha_clase").val(datos['fecha']);
+        $("#contenido_clase").val(datos['contenido']);
+    })
+ /*=============================================
+CAPTURAR LOS DATOS PARA EDITAR ASIGNATURAS
+=============================================*/
+
+      $(document).on("click",".editBoton",function(){
+        let datos = JSON.parse($(this).attr("data-p"));
+        $("#EditId").val(datos['id_Asignatura']);
+        $("#EditNombre").val(datos['nombre']);
+        $("#EditCredito").val(datos['credito']);
+        
+    })
+
+ 
+
 
  /*=============================================
 ELIMINAR ASIGNATURAS
@@ -65,6 +91,8 @@ swal({
 /*=============================================
 
 =============================================*/
+
+ 
 
 
 /*=============================================

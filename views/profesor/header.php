@@ -80,7 +80,7 @@
     </div><!-- /fin de la clase navbar-header -->
   <div id="navbar" class="navbar-collapse collapse">
      <ul class="nav  nav-pills ">
-        <li class="active "><a href="index.php">Inicio</a></li>
+        <li class="active "><a href="<?php echo BASE_URL.'profesor';?>">Inicio</a></li>
         <li  class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Asignaturas<b class="caret"></b></a>
             <ul class="dropdown-menu">
                <li><a href="<?php echo BASE_URL.'profesor/asignaturas'?>">Ver Todas</a></li>

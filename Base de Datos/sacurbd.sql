@@ -7,7 +7,7 @@ USE `sacur` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `sacur`.`asignatura` (
   `id_Asignatura` VARCHAR(50) NOT NULL,
-  `nombre` VARCHAR(30) NOT NULL,
+  `nombre` VARCHAR(100s) NOT NULL,
   `credito` INT NOT NULL,
   PRIMARY KEY (`id_Asignatura`));
 

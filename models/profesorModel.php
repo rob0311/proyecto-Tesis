@@ -69,15 +69,15 @@
             $asignaturas = $this->_db->query("SELECT a.id_Asignatura,a.nombre,a.credito FROM `asignatura` as a 
                    INNER JOIN imparte as i on a.id_Asignatura=i.asignatura_id_Asignatura
                    INNER JOIN profesor as p on i.profesor_idprofesor=p.idprofesor
-                   WHERE p.idprofesor=$id_profesor");
+                   WHERE p.idprofesor=$id_profesor")->fetchAll();
 
-            return $asignaturas->fetchAll();
+            return $asignaturas;
         }
 //**************************************************************
         public function obtener_clases()
         {
             $id_profesor=Session::get("id"); //capturar el id del Profesor
-            $clases = $this->_db->query("SELECT c.idclase,c.tema,c.fecha,a.nombre FROM `clase` as c 
+            $clases = $this->_db->query("SELECT c.idclase,c.tema,c.fecha,a.nombre,c.contenido FROM `clase` as c 
                    INNER JOIN asignatura as a on a.id_Asignatura=c.asignatura_id_asignatura
                    INNER JOIN imparte as i on a.id_Asignatura=i.asignatura_id_Asignatura
                    INNER JOIN profesor as p on i.profesor_idprofesor=p.idprofesor
@@ -96,7 +96,32 @@
             return false ;
        
         }
-       
+   
+
+//*****************************************************************
+    public function updAsignatura($tabla, $datos,$ida){
+     $stmt = $this->_db->prepare("UPDATE $tabla set nombre = :nombre, credito = :credito WHERE   id_Asignatura = :id");
+
+        $stmt->bindParam(":id", $datos["id"], PDO::PARAM_STR);
+        $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
+        $stmt->bindParam(":credito", $datos["credito"], PDO::PARAM_STR);
+
+        if($stmt->execute()){
+
+            return "ok";
+
+        }else{
+
+            return "error";
+        
+        }
+
+        $stmt->close();
+        $stmt = null;
+    
+            
+        }
+    
 //*****************************************************************
          public function  eliminarclass($idclass){
             $class= $this->_db->query("DELETE FROM clase WHERE idclase ='$idclass'");
@@ -109,12 +134,32 @@
         
          }
 //* *****************************************************************
+     public function updClase($tabla, $datos,$ida){
+     $stmt = $this->_db->prepare("UPDATE $tabla set nombre = :nombre, credito = :credito WHERE   id_Asignatura = :id");
+
+        $stmt->bindParam(":id", $datos["id"], PDO::PARAM_STR);
+        $stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
+        $stmt->bindParam(":credito", $datos["credito"], PDO::PARAM_STR);
+
+        if($stmt->execute()){
+
+            return "ok";
+
+        }else{
+
+            return "error";
+        
+        }
+
+        $stmt->close();
+        $stmt = null;
     
+            
+        }
       
 
 
-
-
+//********************************************************************
 
 
 

@@ -16,7 +16,7 @@
   <div class="col-lg-12">  
 <div class="container"> 
 <!-- TABLA DE LAS Asignatura -->
-<table class="table  datatable">
+<table class="table  datatable" id="tbl_asignatura" >
   <thead class="thead-dark">
     <tr>
       <th scope="col">ID</th>
@@ -28,18 +28,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-    <?php 
-        foreach($this->Get_Asignaturas  as $asignatura){   
-    ?>
-      <td scope="row"> <?=$asignatura['id_Asignatura']?> </td>
-      <td> <?=$asignatura['nombre']?> </td>
-      <td> <?=$asignatura['credito']?> </td>
-      <td><button class="btn btn-info editBoton" >Editar</button>
-      / <button class="btn-borrar_asig btn btn-danger">Borrar</button> </td>
-    </tr>
-    
-        <?php }?>
+     <?= $this->contenido ?>
 
   </tbody>
 </table>
@@ -91,6 +80,58 @@
                         <input type="number" class="form-control" id="inputCredito" name="inputCredito" value="1" required />
                     </div>
              <button type="submit" class="btn btn-primary" id="creacion_asig">Crear</button>
+
+             
+                </form>
+                 
+            </div>
+
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+               
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--***************************************************************************  -->
+<!-- Modal Editar Asignatura -->
+<div id="EditarAsignatura" class="modal fade" role="dialog" style="z-index: 100000">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Editar Asignatura</h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+             <p class="statusMsg"></p>
+             <form id="form_Edit_asig" action="" method="post" name="formasig">
+            <input type="hidden" value="1" name="EditAsignatura"/>
+              <div class="form-group">
+                    <label for="inputid">Codigo de la Asignatura</label>
+                    <input type="text" class="form-control" id="EditId" name="EditId"  placeholder="ingrese codigo" readonly  />
+              </div>
+              <div class="form-group">
+                  <label for="inputnombre">Nombre</label>
+                  <input type="text" class="form-control" id="EditNombre" name="EditNombre" placeholder="ingrese el nombre" required />
+              </div>
+             
+              <div class="form-group">
+                        <label for="inputcredito">Creditos</label>
+                        <input type="number" class="form-control" id="EditCredito" name="EditCredito" value="1" required />
+               </div>
+            
+
+             <button type="submit" class="btn btn-primary" id="creacion_asig">Actualizar</button>
 
              
                 </form>

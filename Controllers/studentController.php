@@ -52,14 +52,11 @@ class studentController extends Controller
         }
 
         public function asistencia(){
-
-           if($this->std_model->asistir_clase()){
-             echo 'Bienvenido a Clases.....';
-
-         }
-         else
-             echo 'Ya Marco asistencia';
-           }
+        // Marcar asistencia
+             $repuesta=$this->std_model->asistir_clase($this->getsql('id_clase'));
+             echo $repuesta;
+          
+        }
     // descargar archivos del servidor
     public function descargar_archivo(){
 $fileName = basename('ejercicios.pdf');

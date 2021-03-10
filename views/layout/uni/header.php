@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
@@ -28,7 +29,7 @@
   <link href="<?php echo $_layoutParams['ruta_css'];?>zabuto_calendar.css" rel="stylesheet">
   <link href="<?php echo $_layoutParams['ruta_css'];?>jquery.gritter.css " rel="stylesheet">
   <link href="<?php echo $_layoutParams['ruta_css'];?>miEstilo.css" rel="stylesheet">
-  <link rel="stylesheet" href="<?php echo $_layoutParams['ruta_css'];?>sweetalert2.css">
+  <link href="<?php echo $_layoutParams['ruta_css'];?>sweetalert2.css" rel="stylesheet">
    
   <!-- Paginacion  -->
     <script src="<?php echo $_layoutParams['ruta_js'];?>jquery-3.1.1.min.js"></script>
@@ -43,7 +44,7 @@
 }
 </script>
 </head>
-<body>                                                                                                                   
+<body>                                                                       
   <section id="container">
     <!--header start-->
      <header  class="header black-bg">

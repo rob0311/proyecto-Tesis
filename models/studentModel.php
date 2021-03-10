@@ -81,11 +81,11 @@ class studentModel extends Model{
 
 
     // asistencia
-    public function asistir_clase()
+    public function asistir_clase($class)
     {
       $carnt_user=Session::get("Carnet_Est"); //capturar el id del estudiante
-      $fecha=date("Y-m-d"); //capturar la fecha actual
-     $class="class03";
+      $fecha=date("Y-m-d"); 
+     
    $estado=$this->_db->query(" SELECT * FROM asistencia WHERE estudiante_carnet='$carnt_user' AND clase_idclase='$class' AND fecha='$fecha' ");
   
    if(!$estado->fetch()) {
@@ -95,15 +95,15 @@ class studentModel extends Model{
                                   ->execute(
                                     array(
                                'idDia' => $class,
-                               'carnEst' => $carnt_user ,
+                               'carnEst' => $carnt_user,
                                'fecha' => $fecha 
                                         )
                                     );
-                      return true;
+                                 return "Bienvenido a Clase";
               
      }
      else
-            return false;
+              return "Ya marco Asistencia";
 }
 
 

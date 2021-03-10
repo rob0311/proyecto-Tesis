@@ -23,7 +23,9 @@
    <script src="<?php echo $_layoutParams['ruta_js'];?>sweetalert2.min.js"></script>
    <script src="<?php echo $_layoutParams['ruta_js'];?>jquery.scrollTo.min.js"></script>
    <script src="<?php echo $_layoutParams['ruta_js'];?>modernizr-2.6.2.min.js"></script>
-   <script class="include" type="text/javascript" src="<?php echo $_layoutParams['ruta_js'];?>jquery.dcjqaccordion.2.7.js"></script>  
+   <script class="include" type="text/javascript" src="<?php echo $_layoutParams['ruta_js'];?>jquery.dcjqaccordion.2.7.js">
+     
+   </script>  
     <script src="<?php echo $_layoutParams['ruta_js'];?>common-scripts.js"></script>
  
  

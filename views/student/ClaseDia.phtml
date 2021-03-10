@@ -39,22 +39,29 @@
           <div id="resultado_asistencia" class="text-center"></div>
           
             <!--CUSTOM CHART START -->
+            <form id="form_CrearClase" action="" method="post" name="formclass">
+           <input type="hidden" value="<?=BASE_URL?>" id="base" />
+           <input type="hidden" value="1" name="asistencia" />
             <div class="col-md-12 bg-primary" style="font-weight: bold;">
-       <div class="col-lg-2 "><h4><span>codigo:</span> <span id="id_dia"><?=$GetClaseDia['idclase']?></span> </h4>
+       <div class="col-lg-2 "><h4><span>codigo:</span> <p id="id_dia"><?=$GetClaseDia['idclase']?></span> </h4>
                               <h4>Fecha: <?=$GetClaseDia['fecha']?> </h4>
          </div>
 
           <div class="col-lg-8 "> <h3 class="text-center">Tema: <?=$GetClaseDia['tema']?> </h3></div>
 
         <div class="col-lg-2 "> 
-<a id="btn_asitencia" class="btn btn-success btn-lg"
- href="<?php echo BASE_URL . 'student/asistencia/'?>"> 
-  <i class="fa fa-check-circle"></i> Marcar Asistencia</a>
+           
+  <div id="resultado_asistencia"></div>
+           <a id="btn_asitencia" class="btn btn-success btn-lg"
+           <i class="fa fa-check-circle"></i> Marcar Asistencia</a>
+           </form>
+
             </div>
           </div>
             
   <section class="wrapper">
          <div class="row mt">
+         
           <div class="col-md-12">
             <div class="content-panel">
           
